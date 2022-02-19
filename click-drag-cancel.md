@@ -10,7 +10,7 @@ Last week Patrick Dubroy proposed a [toy problem][1] to handle user input:
 
 He proposed solutions in three different implementation techniques:
     Event listeners, Polling, and Process-oriented.
-For the process-oriented approach he uses his Esterel-inspired [Abro.js] and
+For the process-oriented approach he uses his Esterel-inspired [Abro.js][2] and
 argues that it provides "a clear, explicit sequencing between the different
 states".
 
