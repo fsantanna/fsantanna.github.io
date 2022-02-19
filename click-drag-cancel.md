@@ -1,6 +1,7 @@
 # A Toy Problem: Drag, Click, or Cancel
 
-Last week Patrick Dubroy proposed a [toy problem][1] to handle user input:
+Last week Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle
+user input:
 
 > The goal is to implement a square that you can either drag and drop, or
 > click. The code should distinguish between the two gestures: a click
@@ -94,6 +95,7 @@ call pico_loop ()
 ```
 
 
+[0]: https://twitter.com/dubroy
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/
 [2]: https://github.com/pdubroy/abro
 [3]: http://www.ceu-lang.org/
