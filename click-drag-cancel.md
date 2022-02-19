@@ -8,20 +8,20 @@ Last week Patrick Dubroy proposed a [toy problem][1] to handle user input:
 > dragging, pressing escape should abort the drag and reset the object back to
 > its original position.
 
-He proposed solutions in three different implementation techniques:
+He proposed solutions using three different implementation techniques:
     Event listeners, Polling, and Process-oriented.
 For the process-oriented approach he uses his Esterel-inspired [Abro.js][2] and
 argues that it provides "a clear, explicit sequencing between the different
 states".
 
 Since he mentions [Céu][3] and since I'm currently working on its upcoming
-version, I felt motivated to also post a solution to the problem on it.
-The solution is similar and relies on the `paror` and `watching` constructs to
-safely abort behaviors that did not complete.
-A small difference worth mentioning is that we rely on the deterministic
-scheduling semantics of Céu to eliminate the last state variable (`didDrag`).
+version, I felt motivated to also post a solution to the problem.
+The solution in Céu is similar to his, and uses on the `paror` and `watching`
+constructs to safely abort behaviors that did not complete.
+A small difference worth mentioning is relying on the deterministic scheduling
+semantics of Céu to eliminate a state variable (`didDrag`).
 
-Here's the complete solution and [accompanying video][4]:
+Here's the complete solution with [an accompanying video][4]:
 
 ```
 #include "int.ce"
@@ -30,7 +30,7 @@ Here's the complete solution and [accompanying video][4]:
 -- rectangle to control
 var rect: Rect = [[_10,_10],[_5,_5]]
 
--- tasks to behaviors cancel, drag and drop, click 
+-- tasks to behaviors: cancel, drag and drop, click
 spawn {
     -- outer loop to restart after each behavior is detected
     loop {
