@@ -21,7 +21,9 @@ constructs to safely abort behaviors that did not complete.
 A small difference worth mentioning is relying on the deterministic scheduling
 semantics of Céu to eliminate a state variable (`didDrag`).
 
-Here's the complete solution with [an accompanying video][4]:
+Currently, Céu lacks primitive types (e.g., strings and integers), and named
+fields, so some parts of the code might look strange.
+Anyways, here's the complete solution with [an accompanying video][4]:
 
 ```
 #include "int.ce"
@@ -38,11 +40,11 @@ spawn {
         var dxy: Dims   -- holds the offset to its center
         {
             var mouse: Point
-            await evt?UMouseButtonDown until isPointInsideRect[mouse,rect]
+            await evt?UMouseButtonDown until isPointInsideRect [mouse,rect]
                 where {
                     set mouse = evt!UMouseButtonDown.2
                 }
-            set dxy = [ sub [rect.1.1,mouse.1], sub [rect.1.2,mouse.2] ]
+            set dxy = [sub [rect.1.1,mouse.1], sub [rect.1.2,mouse.2]]
         }
 
         -- then either cancel, drag/drop, or click
