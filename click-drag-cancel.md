@@ -17,7 +17,7 @@ states".
 
 Since he mentions [Céu][3] and since I'm currently working on its upcoming
 version, I felt motivated to also post a solution to the problem.
-The solution in Céu is similar to his, and uses on the `paror` and `watching`
+The solution in Céu is similar to his, and uses the `paror` and `watching`
 constructs to safely abort behaviors that did not complete.
 A small difference worth mentioning is relying on the deterministic scheduling
 semantics of Céu to eliminate a state variable (`didDrag`).
