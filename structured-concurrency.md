@@ -1,19 +1,21 @@
 # Structured (Synchronous) Concurrency
 
-![Twitter](twitter.png) [@_fsantanna](https://twitter.com/_fsantanna)
+#![Twitter](twitter.png) [@_fsantanna](https://twitter.com/_fsantanna)
 
 I have recently learned about [Structured Concurrency][1] (SC), which supports
 nested coroutines with tied lifetimes.
-There are a number of programming libraries (Dill, Trio, Effection), and even
-language support in Swift and Kotlin.
+There are a number of libraries (Dill, Trio, Effection), and even language
+mechanisms in Swift and Kotlin.
 
-The similarities with Esterel and other imperative synchronous languages is
-noteworthy.
-However, it seems that no bridges between these worlds have been built.
-Research in Esterel-derived languages exist since the mid 80s, and always
-includes the idea of lexically-scoped tasks with safe cancellation.
-I believe the most relevant paper regarding Esterel and SC is Berry's
-["Preemption in Concurrent Systems"][3] from 1993, which I discuss further.
+The similarities with [Esterel][2] and derived imperative synchronous languages
+(SLs) is noteworthy.
+However, it seems that no bridges between these worlds (SLs & SC) have been
+built.
+Research in SLs dates back to the early 80s, and constantly reinforces the idea
+of lexically-scoped tasks with safe cancellation.
+I believe the most interesting paper to build bridges between  Esterel with SC
+is Berry's ["Preemption in Concurrent Systems"][3] from 1993, which I discuss
+further.
 
 I was looking at the similarities between Esterel and SC and wondered how they
 would compare to other concurrency models.
@@ -26,10 +28,9 @@ and the scheduling semantics (*synchronous vs asynchronous*).
 The diagram is divided in four quadrants (*A,B,C,D*), each containing a
 representative language or mechanism (*threads*, *map-reduce*, *Esterel*, and
 *FRP [4]*).
-It is clear from this diagram that Esterel and SC (*SC libs*) are indeed very
-similar.
-The gray area contains flexible mechanisms that can also be adopted in other
-quadrants (but probably less frequently).
+The diagram suggests that Esterel and SC (*SC libs*) are very similar.
+The gray area in the middle contains flexible mechanisms that could also be
+adopted in other quadrants (but probably less frequently).
 
 The basic paradigm considers how tasks or units of concurrency are combined in
 the code.
@@ -45,8 +46,8 @@ can only advance together.
 Under the asynchronous model, they execute independently, and require explicit
 primitives to synchronize.
 
-Focusing on quadrant *C*, and back to Berry's paper, follows the first two
-sentences of his paper:
+Focusing on quadrant *C*, and going back to Berry's paper, follows the first
+two sentences of his paper:
 
 > Process preemption deals with controlling the life and death of concurrent
 > processes.
@@ -57,18 +58,19 @@ sentences of his paper:
 Note that "preemption" in this context is the ability to abort a process, and
 should not be confused with "preemption" as in "preemptive multithreading".
 
-Now, compare with Sustrik's definition of SC:
+Now, consider the similarity to Sustrik's definition of SC:
 
 > Structured concurrency means that lifetimes of concurrent functions are
 > cleanly nested.
 > If coroutine *foo* launches coroutine *bar*, then *bar* must finish before
 > *foo* finishes.
 
-What mostly distinguishes Berry's quote is the added restriction:
+What mostly distinguishes Berry's quote is the restriction in the last
+sentence:
 "accurate handling of preemption requires a time-dependent model".
-This restriction is exactly what characterizes quadrant *C* in the diagram.
+This restriction is exactly what characterizes the quadrant *C* in the diagram.
 
-Berry's main goal is to justify orthogonal abortion primitives:
+Berry's main goal in the paper is to justify orthogonal abortion primitives:
 
 > ...preemption primitives should be provided at first-class level and with
 > full orthogonality with respect to all other primitives, including
@@ -80,12 +82,12 @@ Berry's main goal is to justify orthogonal abortion primitives:
 > time, be it a communication or a computation, and we want to be able to abort
 > a statement for any reason.
 
-In the rest of the paper, Berry makes the case for synchronous languages:
+In the rest of the paper, Berry makes the case for SLs:
 
 > We show that classical time-independent languages can only handle the weaker
 > notion of *"may"* preemption, instead of the *"must"* interpretation that is
 > really needed for reactive systems.
-> *"Must"* preemption require reasoning about relative timing of events.
+> *"Must"* preemption requires reasoning about relative timing of events.
 
 Note that in time-independent languages (quadrants *A,B*), there is no
 guaranteed safe point of abortion:
@@ -107,18 +109,18 @@ which states that
 Under this model, processes are always at safe points because internal
 bookkeeping, such as rendezvous communication or arbitrary operations, is
 always instantaneous.
-Of course this hypothesis cannot always be satisfied, in which case synchronous
-languages are not adequate.
-However, this is the case for reactive applications, such as UI interfaces,
+Of course this hypothesis cannot always be satisfied, in which case SLs are not
+adequate.
+However, the hypothesis applies to most reactive applications, such as GUIs,
 video games, and I/O-bound networked applications.
 
-To conclude, note that SC also advocates for "clean nested lifetimes", which is
-equivalent to the orthogonal abortion mechanisms of synchronous languages.
+To conclude, note that SC also advocates for "clean nested lifetimes", which
+is analogous to the orthogonal abortion mechanisms of SLs.
 Hence, SC must be in quadrant *C*, and hence the title of the post as
 "Structured (Synchronous) Concurrency".
 
 [1]: https://en.wikipedia.org/wiki/Structured_concurrency
-[2]: http://ceu-lang.org/
+[2]: https://en.wikipedia.org/wiki/Esterel
 [3]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.42.1557&rep=rep1&type=pdf
 [4]: https://en.wikipedia.org/wiki/Functional_reactive_programming
 
