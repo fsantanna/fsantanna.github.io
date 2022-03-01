@@ -21,7 +21,7 @@ I came up with this diagram to highlight two aspects that I find the most
 relevant to this discussion: the basic paradigm (*procedural vs functional*)
 and the scheduling semantics (*synchronous vs asynchronous*).
 
-![Concurrency Paradigms](paradigms.png)
+<img src="paradigms.png" align="right">
 
 The diagram is divided in four quadrants (*A,B,C,D*), each containing a
 representative language or mechanism (*threads*, *map-reduce*, *Esterel*, and
