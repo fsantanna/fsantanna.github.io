@@ -1,5 +1,7 @@
 # A Toy Problem: Drag, Click, or Cancel
 
+<span style="color: transparent; text-shadow: 0 0 0 #6CADDE">🐦</span> [@_fsantanna](https://twitter.com/_fsantanna)
+
 Last week Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle
 user input:
 

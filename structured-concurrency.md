@@ -1,6 +1,6 @@
 # Structured (Synchronous) Concurrency
 
-#![Twitter](twitter.png) [@_fsantanna](https://twitter.com/_fsantanna)
+<span style="color: transparent; text-shadow: 0 0 0 #6CADDE">🐦</span> [@_fsantanna](https://twitter.com/_fsantanna)
 
 I have recently learned about [Structured Concurrency][1] (SC), which supports
 nested coroutines with tied lifetimes.
