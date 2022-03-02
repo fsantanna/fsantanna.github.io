@@ -1,6 +1,6 @@
 # A Toy Problem: Drag, Click, or Cancel
 
-<img src="twitter.png" valign="center">
+<img src="twitter.png" style="vertical-align:middle">
 [@_fsantanna](https://twitter.com/_fsantanna)
 
 Last week Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle
