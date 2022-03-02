@@ -9,10 +9,10 @@ There are a number of libraries (Dill, Trio, Effection), and even language
 mechanisms in Swift and Kotlin.
 
 The similarities with [Esterel][2] and derived imperative synchronous languages
-(SLs) is noteworthy.
-However, it seems that no bridges between these worlds (SLs & SC) have been
+(ISLs) is noteworthy.
+However, it seems that no bridges between these worlds (ISLs & SC) have been
 built.
-Research in SLs dates back to the early 80s, and constantly reinforces the idea
+Research in ISLs dates back to the early 80s, and constantly reinforces the idea
 of lexically-scoped tasks with safe cancellation.
 I believe the most interesting paper to connect SC with Esterel is Berry's
 ["Preemption in Concurrent Systems"][3] from 1993, which I discuss further.
@@ -85,7 +85,7 @@ primitives...
 > time, be it a communication or a computation, and we want to be able to abort
 > a statement for any reason.
 
-...and in the rest of the paper, Berry makes the case for SLs:
+...and in the rest of the paper, Berry makes the case for ISLs:
 
 > We show that classical time-independent languages can only handle the weaker
 > notion of *"may"* preemption, instead of the *"must"* interpretation that is
@@ -112,13 +112,13 @@ In opposition, time-dependent languages like Esterel rely on the
 Under the SH, processes are always at safe points because internal bookkeeping,
 such as rendezvous communication or arbitrary operations, is always atomic and
 instantaneous.
-Of course the SH cannot always be satisfied, in which case SLs are not
+Of course the SH cannot always be satisfied, in which case ISLs are not
 adequate.
 However, the SH applies to most reactive applications, such as GUIs, video
 games, and I/O-bound networked applications.
 
 To conclude, note that SC also advocates for "clean nested lifetimes", which
-is analogous to the orthogonal abortion mechanisms of SLs.
+is analogous to the orthogonal abortion mechanisms of ISLs.
 Hence, SC must be in quadrant *C*, and hence the title of the post as
 "Structured (Synchronous) Concurrency".
 
