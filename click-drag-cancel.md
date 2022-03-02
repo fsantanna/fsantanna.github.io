@@ -97,7 +97,8 @@ spawn {
 call pico_loop ()
 ```
 
-Comment on <img src="twitter.png" valign="center"> [@_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
+<img src="twitter.png" valign="center">
+Comment on [@_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
 
 [0]: https://twitter.com/dubroy
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/
