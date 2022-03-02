@@ -27,7 +27,7 @@ and the scheduling semantics (*synchronous vs asynchronous*).
 
 The diagram is divided in four quadrants (*A,B,C,D*), each containing a
 representative language or mechanism (*threads*, *map-reduce*, *Esterel*, and
-*FRP [4]*).
+*[FRP][4]*).
 The diagram suggests that Esterel and SC (*SC libs*) are very similar.
 The gray area in the middle contains flexible mechanisms that could also be
 adopted in other quadrants.
