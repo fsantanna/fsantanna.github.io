@@ -30,8 +30,8 @@ fields, so some parts of the code might look strange.
 Anyways, here's the complete solution with [an accompanying video][4]:
 
 ```
-#include "int.ce"
-#include "pico.ce"
+^"int.ceu"
+^"pico.ceu"
 
 -- rectangle to control
 var rect: Rect = [[_10,_10],[_5,_5]]
@@ -41,44 +41,44 @@ spawn {
     -- outer loop to restart after each behavior is detected
     loop {
         -- first detects the first click on the rectangle
-        var dxy: Dims   -- holds the offset to its center
+        var dxy: Size   -- holds the offset to its center
         {
             var mouse: Point
-            await evt?UMouseButtonDown until isPointInsideRect [mouse,rect]
+            await evt?Mouse?Button?Down until isPointInsideRect [mouse,rect]
                 where {
-                    set mouse = evt!UMouseButtonDown.2
+                    set mouse = evt!Mouse!Button!Down.pos
                 }
-            set dxy = [sub [rect.1.1,mouse.1], sub [rect.1.2,mouse.2]]
+            set dxy = [sub [rect.pos.x,mouse.x], sub [rect.pos.y,mouse.y]]
         }
 
         -- then either cancel, drag/drop, or click
         paror {
             -- cancel behavior: restores the original position on any key
             var orig = rect
-            await evt?UKeyDown until eq [evt!UKeyDown,_SDLK_ESCAPE]
+            await evt?Key?Down until eq [evt!Key!Down.key,_SDLK_ESCAPE]
             set rect = orig
             output std _("Cancelled!"):_(char*)
         } with {
             -- drag/drop behavior: must be before click (see below)
-            await evt?UMouseMotion
+            await evt?Mouse?Motion
             output std _("Dragging..."):_(char*)
-            var mouse = evt!UMouseMotion
-            watching evt?UMouseButtonUp {   -- terminates on mouse up
+            var mouse = evt!Mouse!Motion
+            watching evt?Mouse?Button?Up {   -- terminates on mouse up
                 -- tracks mouse motion to move the rectangle
                 loop {
-                    set rect = [pt, rect.2]
+                    set rect = [pt, rect.size]
                         where {
-                            var pt: Point = [ add [mouse.1,dxy.1], add [mouse.2,dxy.2] ]
+                            var pt: Point = [add [mouse.pos.x,dxy.w], add [mouse.pos.y,dxy.h]]
                         }
-                    await evt?UMouseMotion
-                    set mouse = evt!UMouseMotion
+                    await evt?Mouse?Motion
+                    set mouse = evt!Mouse!Motion
                 }
             }
             output std _("Dropped!"):_(char*)
         } with {
             -- behavior: must be the last
             -- otherwise conflicts w/ motion termination
-            await evt?UMouseButtonUp
+            await evt?Mouse?Button?Up
             output std _("Clicked!"):_(char*)
         }
     }
@@ -88,9 +88,9 @@ spawn {
 spawn {
     loop {
         await _1
-        output pico TPico.UClear
-        output pico TPico.UDraw_Rect rect
-        output pico TPico.UPresent
+        output pico Pico.Output.Clear
+        output pico Pico.Output.Draw.Rect rect
+        output pico Pico.Output.Present
     }
 }
 
