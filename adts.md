@@ -57,10 +57,11 @@ output e?Key?Down        --> 0 (no, this is not a key down event)
 output e!Mouse!Click.but --> 1 (clicked mouse button number)
 ```
 
-Note how nested anonymous unions induce type hierarchies with arbitrary levels:
+Note how nested anonymous unions can induce type hierarchies with arbitrary
+levels:
 An `Event.Key.Up` could be a subtype of `Event.Key` and both could be subtypes
 of `Event`.
-We are therefore experimenting with ADTs subtyping in Ceu:
+We are therefore experimenting with ADT subtyping in Ceu:
 
 ```
 var clk: Event.Mouse.Click = Event.Mouse.Click [[10,20], 1]
@@ -69,14 +70,16 @@ var cst: Event.Mouse.Click = clk :: Event.Mouse.Click   -- downcast success
 var err: Event.Key = clk :: Event.Key                   -- downcast error
 ```
 
-The other experimental feature is data inheritance.
+One peculiarity of this design is that the hierarchy chain must always be
+explicit: `Click` is not a type itself without the full path
+`Event.Mouse.Click`.
+
+The other experimental feature is ADT inheritance.
 Note that `Event.Mouse.Click` and `Event.Mouse.Motion` both hold the mouse
 position, while `Event.Key.Down` and `Event.Key.Up` share the key code.
-We can rewrite the type as follows:
+We can reuse fields in common supertypes and rewrite the type as follows:
 
 ```
-type Point = [x:Int,y:Int]
-
 type Event = <
     Key = [key:Int] + <
         Down = (),
@@ -92,31 +95,16 @@ var mot = Event.Mouse.Motion [[10,20]]
 output std mot!Mouse!Motion.pos.x   --> 10
 
 var key = Event.Key.Up [65]
-output std key!Key!Up.key   --> 65
+output std key!Key!Up.key           --> 65
 ```
 
-<!--
-- AND / OR
+There is still a lot to do about generics, variance, recursion, and memory
+management though...
 
-- implementation
-    - invert tag
-        - composition same as inheritance
+Do you know about other languages or paper presenting similar functionality?
 
-- anonymous
-- inheritance
-    - reuse fields
-- subtyping
-    - pass to function
+- Anonymous tagged unions.
+- Subtyping
+- Data inheritance
 
-- still closed
-- exhaustive match
-
-- parametric?
-- variance?
-
-
-what other languages do you know with
-- anonymous tagged unions
-- reuse inheritance
-- subtytping
--->
+I'm interested in learning more about them.
