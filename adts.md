@@ -1,4 +1,4 @@
-# Algebraic Data Types with Inheritance and Subtyping
+# Algebraic Data Types with Subtyping and Inheritance
 
 Algebraic Data Types (ADTs) combine tuples and tagged unions to form complex
 types.
