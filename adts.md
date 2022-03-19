@@ -1,5 +1,8 @@
 # Algebraic Data Types with Subtyping and Inheritance
 
+<img src="twitter.png" style="vertical-align:middle">
+[@_fsantanna](https://twitter.com/_fsantanna)
+
 Algebraic Data Types (ADTs) combine tuples and tagged unions to form complex
 types.
 
@@ -73,18 +76,19 @@ var err: Event.Key = clk :: Event.Key                   -- downcast error
 ```
 
 One peculiarity of this design is that the hierarchy chain must always be
-explicit: `Click` is not a type itself without the full path
+explicit: `Click` is not a type by itself without the full path
 `Event.Mouse.Click`.
 
-The other experimental feature is ADT inheritance.
+The other experimental ADT feature in Ceu is inheritance.
 Note that `Event.Mouse.Click` and `Event.Mouse.Motion` both hold the mouse
-position, while `Event.Key.Down` and `Event.Key.Up` share the key code.
-We can reuse fields in common supertypes and rewrite the type as follows:
+position, while `Event.Key.Down` and `Event.Key.Up` both hold the key code.
+In Ceu, subtypes can share and reuse fields attached to their supertypes.
+Hence, we can rewrite the `Event` type hierarchy as follows:
 
 ```
 type Event = <
-    Key = [key:Int] + <
-        Down = (),
+    Key = [key:Int] + <  -- [key:Int] is attached to subtypes:
+        Down = (),       --     Event.Key.Down [key:Int]
         Up = ()
     >,
     Mouse = [pos:Point] + <
@@ -100,13 +104,15 @@ var key = Event.Key.Up [65]
 output std key!Key!Up.key           --> 65
 ```
 
-There is still a lot to do about generics, variance, recursion, and memory
-management though...
+These are early experiments and there is still a lot to do about generics,
+variance, recursion, and memory management though...
 
-Do you know about other languages or paper presenting similar functionality?
+Do you know about other languages or papers presenting similar functionalities?
 
 - Anonymous tagged unions.
 - Subtyping
 - Data inheritance
 
 I'm interested in learning more about them.
+
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/1498993572783271949).

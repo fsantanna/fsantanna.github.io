@@ -125,7 +125,6 @@ Hence, SC must be in quadrant *C*, and hence the title of the post as
 Do you agree with the diagram? Any missing aspect or mechanism?
 Do you agree that SC must be synchronous?
 
-
 Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/1498993572783271949).
 
 [1]: https://en.wikipedia.org/wiki/Structured_concurrency
