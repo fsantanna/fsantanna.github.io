@@ -6,8 +6,10 @@
 Algebraic Data Types (ADTs) combine tuples and tagged unions to form complex
 types.
 
-The upcoming version of Ceu supports anonymous tuples and unions as its basic
-ADT mechanisms as follows:
+The upcoming version of [Ceu][1] supports anonymous tuples and unions as its
+basic ADT mechanisms as follows:
+
+[1]: https://github.com/fsantanna/ceu
 
 ```
 var pt: [Int,Int] = [10,20]  -- a pair tuple
