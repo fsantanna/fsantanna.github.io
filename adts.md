@@ -3,14 +3,14 @@
 Algebraic Data Types (ADTs) combine tuples and tagged unions to form complex
 types.
 
-As its basic ADT mechanism, the upcoming version of Ceu supports anonymous
-tuples and unions as follows:
+The upcoming version of Ceu supports anonymous tuples and unions as its basic
+ADT mechanisms as follows:
 
 ```
-var pt: [Int,Int] = [10,20]  -- a tuple pair
+var pt: [Int,Int] = [10,20]  -- a pair tuple
 output std pt.1     --> 10
 
-var ui: <(),Int> = <.2 20>   -- a union pair (either Unit or Int)
+var ui: <(),Int> = <.2 20>   -- a pair union (either Unit or Int)
 output std ui?2     --> 1 (yes, ui holds the second Int variant)
 output std ui!2     --> 20
 ```
@@ -19,6 +19,8 @@ Tuple types and constructors use square brackets and are pretty standard.
 Union types use angle brackets and can be anonymous just like tuples.
 Union constructors also use angle brackets and receive the variant index and
 its argument.
+Union predicates and discriminators use question and exclamation marks,
+respectively, followed by a variant index.
 
 Ceu also supports user-defined types, which can combine tuples and unions to
 form classic ADTs.
@@ -59,7 +61,7 @@ output e!Mouse!Click.but --> 1 (clicked mouse button number)
 
 Note how nested anonymous unions can induce type hierarchies with arbitrary
 levels:
-An `Event.Key.Up` could be a subtype of `Event.Key` and both could be subtypes
+An `Event.Key.Up` could be a subtype of `Event.Key`, and both could be subtypes
 of `Event`.
 We are therefore experimenting with ADT subtyping in Ceu:
 
