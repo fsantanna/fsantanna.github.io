@@ -1,6 +1,6 @@
 
 <img src="twitter.png" style="vertical-align:middle">
-<!--[@_fsantanna](https://twitter.com/_fsantanna)-->
+[@_fsantanna](https://twitter.com/_fsantanna)
 
 A few years ago, I wrote a [blog post][3] (and a simplified [paper][4]) on
 rewriting Pingus from C++ to Ceu.
@@ -33,23 +33,24 @@ In this context, a control-flow pattern is a recurring technique to describe
 execution dependency and/or explicit ordering between statements.
 They are:
 
-1. **Finite State Machines:** State machines describe the behavior of entities by
-   mapping event occurrences to transitions between states that trigger
+1. **Finite State Machines:** State machines describe the behavior of entities
+   by mapping event occurrences to transitions between states that trigger
    appropriate actions.
     - Examples: double-click detection, character animations.
-2. **Continuation Passing:** The completion of a long-lasting activity may carry a
-   continuation, i.e., some action to execute next.
+2. **Continuation Passing:** The completion of a long-lasting activity may
+   carry a continuation, i.e., some action to execute next.
     - Examples: interactive dialogs, menu transitions.
-3. **Dispatching Hierarchies:** Entities typically form a dispatching hierarchy in
-   which a container that receives a stimulus automatically forwards it to its
-   managed children.
+3. **Dispatching Hierarchies:** Entities typically form a dispatching hierarchy
+   in which a container that receives a stimulus automatically forwards it to
+   its managed children.
     - Examples: redrawing & update callbacks.
-4. **Lifespan Hierarchies:** Entities typically form a lifespan hierarchy in which
-   a terminating container entity automatically destroys its managed children.
+4. **Lifespan Hierarchies:** Entities typically form a lifespan hierarchy in
+   which a terminating container entity automatically destroys its managed
+   children.
     - Examples: UI containers, particle systems.
-5. **Signaling Mechanisms:** Entities often need to communicate explicitly through
-   signaling mechanisms, especially if there is no hierarchy relationship
-   between them.
+5. **Signaling Mechanisms:** Entities often need to communicate explicitly
+   through signaling mechanisms, especially if there is no hierarchy
+   relationship between them.
     - Examples: key shortcuts, screen pausing.
 
 I'm currently rewriting Pingus again to the upcoming version of Ceu.
