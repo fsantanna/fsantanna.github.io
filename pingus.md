@@ -1,4 +1,3 @@
-# On rewriting Pingus from C++ to Ceu
 
 <img src="twitter.png" style="vertical-align:middle">
 <!--[@_fsantanna](https://twitter.com/_fsantanna)-->
