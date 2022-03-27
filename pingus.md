@@ -2,17 +2,16 @@
 <img src="twitter.png" style="vertical-align:middle">
 [@_fsantanna](https://twitter.com/_fsantanna)
 
+<img src="pingus.png" align="right" width="350">
+
 A few years ago, I wrote a [blog post][3] (and a simplified [paper][4]) on
 rewriting Pingus from C++ to Ceu.
 [Pingus][1] is an open-source clone of [Lemmings][2], a puzzle-platformer video
 game.
 We rewrote 50% of the codebase, which constitutes the game logic with around
 20k lines of code.
-
-<img src="pingus.png" align="right" width="350">
-
-This study advocates *"Structured Synchronous Reactive Programming (SSRP)"* as
-a more productive alternative for game logic development:
+The study advocates *"Structured Synchronous Reactive Programming (SSRP)"* as a
+more productive alternative for game logic development:
 
 > Ceu supports reactive control-flow primitives that eliminate callbacks and
 > let programmers write code in direct and sequential style.
