@@ -1,3 +1,4 @@
+# On rewriting Pingus from C++ to Ceu
 
 <img src="twitter.png" style="vertical-align:middle">
 [@_fsantanna](https://twitter.com/_fsantanna)
@@ -67,4 +68,4 @@ Do you identify other general control-flow patterns in games?
 [4]: http://ceu-lang.org/chico/ceu_sbgames18.pdf
 [5]: https://fsantanna.github.io/structured-concurrency.html
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/1508091964390092810).
