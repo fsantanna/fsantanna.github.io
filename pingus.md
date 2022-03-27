@@ -8,8 +8,8 @@ A few years ago, I wrote a [blog post][3] (and a simplified [paper][4]) on
 rewriting Pingus from C++ to Ceu.
 [Pingus][1] is an open-source clone of [Lemmings][2], a puzzle-platformer video
 game.
-We rewrote 50% of the codebase, which constitutes the game logic with around
-20k lines of code.
+We rewrote 50% of the codebase, or 20k lines of code, which constitutes the
+entire game logic.
 The study advocates *"Structured Synchronous Reactive Programming (SSRP)"* as a
 more productive alternative for game logic development:
 
@@ -42,7 +42,7 @@ They are:
 3. **Dispatching Hierarchies:** Entities typically form a dispatching hierarchy
    in which a container that receives a stimulus automatically forwards it to
    its managed children.
-    - Examples: redrawing & update callbacks.
+    - Examples: redraw & update callbacks.
 4. **Lifespan Hierarchies:** Entities typically form a lifespan hierarchy in
    which a terminating container entity automatically destroys its managed
    children.
@@ -52,7 +52,8 @@ They are:
    relationship between them.
     - Examples: key shortcuts, screen pausing.
 
-I'm currently rewriting Pingus again to the upcoming version of Ceu.
+The reason I'm revisiting this study is because I'm currently rewriting Pingus
+to the upcoming version of Ceu.
 The goal is twofold:
 
 - Evolving the language implementation to a launching state.
