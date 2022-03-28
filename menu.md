@@ -1,7 +1,11 @@
-# A Structured Main Menu
+# A structured main menu
 
 <img src="twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
+
+- On rewriting [Pingus][pingus.md] from C++ to Ceu
+    - **A structured main menu**
+    - Menu [buttons](buttons.md) as tasks
 
 <img src="menu.gif" align="right" width="350">
 
@@ -19,12 +23,12 @@ Our goal is to apply [structured reactive techniques](pingus.md) in the
 implementation.
 Let's discuss it in a top-down approach, starting with the main application:
 
-```
+<pre>
 -- enumeration with the possible main menu choices
-type Menu = <Story=(), Editor=(), ...>
+<b>type</b> Menu = <Story=(), Editor=(), ...>
 
 -- task signatures for the menu and buttons
-task main_menu: () -> Menu
+task main\_menu: () -> Menu
     -- returns the next screen to navigate
 task menu_button: [pos:Point, lbl:String] -> ()
     -- receives a position and label to show
@@ -50,7 +54,7 @@ spawn {
 
 -- enters the SDL engine loop
 call pico_loop ()
-```
+</pre>
 
 The important structured mechanism is the outer loop (1️⃣) that alternates
 between the main menu and the chosen screen.
