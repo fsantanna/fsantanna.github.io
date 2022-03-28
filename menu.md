@@ -26,12 +26,12 @@ output Set.Title "Pingus"
 -- enumeration with the possible main menu choices
 enum Menu = <Story, Editor, Levelsets, Options, Exit>
 
--- menu button implementation
+-- menu button implementation: receives a position and label to show
 task menu_button: [pos:Point, lbl:String] -> () {
     ... -- discussed further
 }
 
--- main menu implementation
+-- main menu implementation: returns the next screen to navigate
 task main_menu: () -> Menu {
     ... -- discussed further
 }
@@ -45,11 +45,9 @@ spawn {
 
         -- chosen screen
         var lbl = ifs {
-            opt ? Story     { "Story"     }
-            opt ? Editor    { "Editor"    }
-            opt ? Levelsets { "Levelsets" }
-            opt ? Options   { "Options"   }
-            opt ? Exit      { "Exit"      }
+            opt ? Story  { "Story"  }
+            opt ? Editor { "Editor" }
+            ... -- other options
         }
         await spawn menu_button [[0,0], lbl]
 
@@ -64,18 +62,59 @@ call pico_loop ()
 The important structured mechanism is the outer loop that alternates between
 the main menu and the chosen screen.
 These screens can be arbitrarily complex and are handled with the `spawn-await`
-combination: spawn the task in the background and await its termination.
+combination, which resembles conventional function calls: spawn the task and
+await its termination.
 The language keeps the loop context alive (i.e., locals and program counter),
 while the current screen executes in a separate task, possibly reacting to
 events and spawning auxiliary tasks.
+This [direct style][1] contrasts with the arguably more intricate *continuation
+passing style (CPS)*, which is one of the control-flow pattern identified in
+the [previous post](pingus.md).
 
-- what about C++ Pingus
-- push_screen
-- pop_screen
-    - explicit stack management, imagine a language w/o locals
-    - what a language w/o stack would do
+The original implementation in C++ uses CPS and pushes the screen navigation to
+occur inside the button click callback:
 
+```
+MainMenu::MainMenu () {
+    ...
+    start_but = gui->create<MenuButton>(...)  // menu buttons
+    ...
+}
 
+void MainMenu::on_click (MenuButton* button) {
+    if (button == start_but) {
+        ...
+        Screen::push_screen(worldmap);        // screen navigation
+        ...
+    } else ... {    // other buttons
+        ...
+    }
+}
+```
+
+The implementation in C++ also relies on an explicit stack to alternate between
+the main menu and the chosen screen:
+It pushes a new screen on top of the main menu, which must be explicitly popped
+when terminating:
+
+```
+void Worldmap::update (float delta) {
+    ...
+    if (exit_worldmap) {
+        Screen::pop_screen();
+    }
+    ...
+}
+void WorldmapCloseButton::on_click() {
+    Screen::pop_screen();
+}
+```
+
+Not only this approach requires the called screen to be aware of its parent
+navigation flow, but it also relies on a data structure to simulate a
+control-flow mechanism.
+
+[1]: https://handwiki.org/wiki/Direct_style
 
 <!--
 - top down
