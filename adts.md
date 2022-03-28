@@ -109,6 +109,8 @@ Hence, we can rewrite the `Event` type hierarchy as follows:
 These are early experiments and there is still a lot to do about generics,
 variance, recursion, and memory management though...
 
+---
+
 Do you know about other languages or papers presenting similar functionalities?
 
 - Anonymous tagged unions.

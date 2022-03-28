@@ -122,15 +122,17 @@ is analogous to the orthogonal abortion mechanisms of ISLs.
 Hence, SC must be in quadrant *C*, and hence the title of the post as
 "Structured (Synchronous) Concurrency".
 
-Do you agree with the diagram? Any missing aspect or mechanism?
-Do you agree that SC must be synchronous?
-
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1498993572783271949).
-
 [1]: https://en.wikipedia.org/wiki/Structured_concurrency
 [2]: https://en.wikipedia.org/wiki/Esterel
 [3]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.42.1557&rep=rep1&type=pdf
 [4]: https://en.wikipedia.org/wiki/Functional_reactive_programming
+
+---
+
+Do you agree with the diagram? Any missing aspect or mechanism?
+Do you agree that SC must be synchronous?
+
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1498993572783271949).
 
 <!--
 parallel, non-determinism, synchronization primitives

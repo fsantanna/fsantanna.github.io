@@ -16,8 +16,6 @@ screen or the gameplay itself.
 Eventually, after the chosen screen terminates, the game transits back to the
 main menu.
 
----
-
 In the demo figure, we symbolize the chosen screens as clickable buttons
 associated with the user choices.
 Clicking the button again terminates the screen and returns to the main menu.
@@ -75,8 +73,6 @@ pattern identified in the [previous post](pingus.md):
 - **Continuation Passing:** The completion of a long-lasting activity may
    carry a continuation, i.e., some action to execute next.
     - Examples: interactive dialogs, menu transitions.
-
----
 
 The original [implementation in C++][2] uses CPS and pushes the screen
 navigation to occur inside the button click callback, thus textually far away
