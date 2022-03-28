@@ -50,11 +50,11 @@ Instead of indexes, we can also use tuple fields and variant names as aliases:
 
 <b>type</b> Event = <
     Key = <
-        Down = Int,
+        Down = Int
         Up = Int
-    >,
+    >
     Mouse = <
-        Click = [pos:Point, but:Int],
+        Click = [pos:Point, but:Int]
         Motion = Point
     >
 >
@@ -92,9 +92,9 @@ Hence, we can rewrite the `Event` type hierarchy as follows:
     Key = [key:Int] + <  -- [key:Int] is attached to subtypes:
         Down = (),       --     Event.Key.Down [key:Int]
         Up = ()
-    >,
+    >
     Mouse = [pos:Point] + <
-        Click = [but:Int],
+        Click = [but:Int]
         Motion = ()
     >
 >
