@@ -100,7 +100,7 @@ between the main menu and the chosen screen:
 It pushes a new screen on top of the main menu, which must be explicitly popped
 when terminating:
 
-```
+```cpp
 void Worldmap::update (float delta) {
     ...
     if (exit_worldmap) {
@@ -116,18 +116,6 @@ void WorldmapCloseButton::on_click() {
 Not only this approach requires the called screen to be aware of its parent
 navigation flow, but it also relies on a data structure to simulate a
 control-flow mechanism.
-
-```
--- menu button implementation: receives a position and label to show
-task menu_button: [pos:Point, lbl:String] -> () {
-    ... -- discussed further
-}
-
--- main menu implementation: returns the next screen to navigate
-task main_menu: () -> Menu {
-    ... -- discussed further
-}
-```
 
 [1]: https://handwiki.org/wiki/Direct_style
 [2]: https://github.com/Pingus/pingus/blob/master/src/pingus/screens/pingus_menu.cpp#L178

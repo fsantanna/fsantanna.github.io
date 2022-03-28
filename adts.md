@@ -12,12 +12,12 @@ basic ADT mechanisms as follows:
 [1]: https://github.com/fsantanna/ceu
 
 <pre>
-var</b> pt: [Int,Int] = [10,20]  -- a pair tuple
-output</b> std pt.1     --> 10
+<b>var</b> pt: [Int,Int] = [10,20]  -- a pair tuple
+<b>output</b> std pt.1     --> 10
 
-var ui: <(),Int> = <.2 20>   -- a pair union (either Unit or Int)
-output</b> std ui?2     --> 1 (yes, ui holds the second Int variant)
-output</b> std ui!2     --> 20
+<b>var</b> ui: <(),Int> = <.2 20>   -- a pair union (either Unit or Int)
+<b>output</b> std ui?2     --> 1 (yes, ui holds the second Int variant)
+<b>output</b> std ui!2     --> 20
 </pre>
 
 Tuple types and constructors use square brackets and are pretty standard.
@@ -75,7 +75,6 @@ We are therefore experimenting with ADT subtyping in Ceu:
 <b>var</b> evt: Event = clk                                    -- upcast always ok
 <b>var</b> cst: Event.Mouse.Click = clk :: Event.Mouse.Click   -- downcast success
 <b>var</b> err: Event.Key = clk :: Event.Key                   -- downcast error
-</pre>
 </pre>
 
 One peculiarity of this design is that the hierarchy chain must always be
