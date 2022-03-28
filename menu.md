@@ -1,7 +1,7 @@
 # A Structured Main Menu
 
 <img src="twitter.png" style="vertical-align:middle">
-[\_@fsantanna](https://twitter.com/_fsantanna)
+[@\_fsantanna](https://twitter.com/_fsantanna)
 
 <img src="menu.gif" align="right" width="350">
 
@@ -20,28 +20,21 @@ implementation.
 Let's discuss it in a top-down approach, starting with the main application:
 
 ```
-output Set.Title "Pingus"
-... -- other trivial initializations
-
 -- enumeration with the possible main menu choices
-enum Menu = <Story, Editor, Levelsets, Options, Exit>
+type Menu = <Story=(), Editor=(), ...>
 
--- menu button implementation: receives a position and label to show
-task menu_button: [pos:Point, lbl:String] -> () {
-    ... -- discussed further
-}
-
--- main menu implementation: returns the next screen to navigate
-task main_menu: () -> Menu {
-    ... -- discussed further
-}
+-- task signatures for the menu and buttons
+task main_menu: () -> Menu
+    -- returns the next screen to navigate
+task menu_button: [pos:Point, lbl:String] -> ()
+    -- receives a position and label to show
 
 -- spawns the game code
 spawn {
-    -- the outer loop :one: 1️⃣
+    -- the outer loop                           1️⃣
     loop {
         -- main menu
-        var opt = await spawn main_menu ()
+        var opt = await spawn main_menu ()      2️⃣
 
         -- chosen screen
         var lbl = ifs {
@@ -49,7 +42,7 @@ spawn {
             opt ? Editor { "Editor" }
             ... -- other options
         }
-        await spawn menu_button [[0,0], lbl]
+        await spawn menu_button [[0,0], lbl]    2️⃣
 
         -- loops back to main menu after chosen screen terminates
     }
@@ -59,26 +52,32 @@ spawn {
 call pico_loop ()
 ```
 
-The important structured mechanism is the outer loop that alternates between
-the main menu and the chosen screen.
+The important structured mechanism is the outer loop (1️⃣) that alternates
+between the main menu and the chosen screen.
 These screens can be arbitrarily complex and are handled with the `spawn-await`
-combination, which resembles conventional function calls: spawn the task and
-await its termination.
-The language keeps the loop context alive (i.e., locals and program counter),
-while the current screen executes in a separate task, possibly reacting to
-events and spawning auxiliary tasks.
+combination (2️⃣), which resembles conventional function calls: spawn the task
+and await its termination.
+We discuss the `main_menu` and the `menu_button` implementations in a future
+post.
+While waiting in the loop, the language keeps its context alive (i.e., locals
+and program counter), and the current screen executes in a separate task,
+possibly reacting to events and spawning auxiliary tasks.
 This [direct style][1] contrasts with the arguably more intricate *continuation
 passing style (CPS)*, which is one of the control-flow pattern identified in
-the [previous post](pingus.md).
+the [previous post](pingus.md):
 
-The original implementation in C++ uses CPS and pushes the screen navigation to
-occur inside the button click callback:
+2. **Continuation Passing:** The completion of a long-lasting activity may
+   carry a continuation, i.e., some action to execute next.
+    - Examples: interactive dialogs, menu transitions.
+
+The original [implementation in C++][2] uses CPS and pushes the screen
+navigation to occur inside the button click callback:
 
 ```
 MainMenu::MainMenu () {
     ...
-    start_but = gui->create<MenuButton>(...)  // menu buttons
-    ...
+    start_but = gui->create<MenuButton>(...)
+    ...  // other menu buttons
 }
 
 void MainMenu::on_click (MenuButton* button) {
@@ -92,8 +91,8 @@ void MainMenu::on_click (MenuButton* button) {
 }
 ```
 
-The implementation in C++ also relies on an explicit stack to alternate between
-the main menu and the chosen screen:
+The [implementation in C++][3] also relies on an explicit stack to alternate
+between the main menu and the chosen screen:
 It pushes a new screen on top of the main menu, which must be explicitly popped
 when terminating:
 
@@ -114,65 +113,21 @@ Not only this approach requires the called screen to be aware of its parent
 navigation flow, but it also relies on a data structure to simulate a
 control-flow mechanism.
 
+```
+-- menu button implementation: receives a position and label to show
+task menu_button: [pos:Point, lbl:String] -> () {
+    ... -- discussed further
+}
+
+-- main menu implementation: returns the next screen to navigate
+task main_menu: () -> Menu {
+    ... -- discussed further
+}
+```
+
 [1]: https://handwiki.org/wiki/Direct_style
+[2]: https://github.com/Pingus/pingus/blob/master/src/pingus/screens/pingus_menu.cpp#L178
+[3]: https://github.com/Pingus/pingus/blob/master/src/pingus/worldmap/worldmap_screen.cpp#L179
 
-<!--
-- top down
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
 
-2. **Continuation Passing:** The completion of a long-lasting activity may
-   carry a continuation, i.e., some action to execute next.
-    - Examples: interactive dialogs, menu transitions.
-3. **Dispatching Hierarchies:** Entities typically form a dispatching hierarchy
-   in which a container that receives a stimulus automatically forwards it to
-   its managed children.
-    - Examples: redraw & update callbacks.
-4. **Lifespan Hierarchies:** Entities typically form a lifespan hierarchy in
-   which a terminating container entity automatically destroys its managed
-   children.
-    - Examples: UI containers, particle systems.
-
-```
-task menu_button: [pos:Point,tit:_(char*)] -> () {
-    ...
-}
-
-task menu: () -> Menu {
-    par {
-        await spawn menu_button [[_(-125),_(  35)], _("Story")]
-        return Menu.Story
-    } with {
-        await spawn menu_button [[_( 125),_(  35)], _("Editor")]
-        return Menu.Editor
-    } with {
-        await spawn menu_button [[_(-125),_( -35)], _("Levelsets")]
-        return Menu.Levelsets
-    } with {
-        await spawn menu_button [[_( 125),_( -35)], _("Options")]
-        return Menu.Options
-    } with {
-        await spawn menu_button [[_(   0),_(-105)], _("Exit")]
-        return Menu.Exit
-    }
-}
-```
-
-```
-task menu_button: [pos:Point,tit:_(char*)] -> () {
-    var size: Size
-    output pico Pico.Output.Get.Size.Image [/size, _("data/images/menuitem.png")]
-
-    spawn {
-        every evt?Draw {
-            output pico Pico.Output.Draw.Image [arg.pos, _("data/images/menuitem.png")]
-            output pico Pico.Output.Set.Font [_("data/fonts/film-cryptic/Filmcryptic.ttf"),_45]
-            output pico Pico.Output.Draw.Text [arg.pos, arg.tit]
-        }
-    }
-
-    await evt?Mouse?Button?Down until isPointVsRect [pos,[arg.pos,size]]
-        where {
-            var pos = evt!Mouse!Button!Down.pos
-        }
-}
-```
--->
