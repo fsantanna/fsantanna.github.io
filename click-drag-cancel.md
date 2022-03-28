@@ -1,7 +1,7 @@
 # A Toy Problem: Drag, Click, or Cancel
 
 <img src="twitter.png" style="vertical-align:middle">
-[@_fsantanna](https://twitter.com/_fsantanna)
+[@\_fsantanna](https://twitter.com/_fsantanna)
 
 Last week Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle
 user input:
@@ -97,7 +97,7 @@ spawn {
 call pico_loop ()
 ```
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
 
 [0]: https://twitter.com/dubroy
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/

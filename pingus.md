@@ -1,7 +1,7 @@
 # On rewriting Pingus from C++ to Ceu
 
 <img src="twitter.png" style="vertical-align:middle">
-[@_fsantanna](https://twitter.com/_fsantanna)
+[@\_fsantanna](https://twitter.com/_fsantanna)
 
 <img src="pingus.png" align="right" width="350">
 
@@ -60,12 +60,12 @@ The goal is twofold:
 - Evolving the language implementation to a launching state.
 - Discussing these control-flow patterns in future blog posts.
 
-Do you identify other general control-flow patterns in games?
-
 [1]: http://pingus.seul.org/
 [2]: https://en.wikipedia.org/wiki/Lemmings_(video_game)
 [3]: https://fsantanna.github.io/pingus/
 [4]: http://ceu-lang.org/chico/ceu_sbgames18.pdf
 [5]: https://fsantanna.github.io/structured-concurrency.html
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/1508091964390092810).
+Do you identify other general control-flow patterns in games?
+
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1508091964390092810).

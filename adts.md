@@ -1,7 +1,7 @@
 # Algebraic Data Types with Subtyping and Inheritance
 
 <img src="twitter.png" style="vertical-align:middle">
-[@_fsantanna](https://twitter.com/_fsantanna)
+[@\_fsantanna](https://twitter.com/_fsantanna)
 
 Algebraic Data Types (ADTs) combine tuples and tagged unions to form complex
 types.
@@ -117,4 +117,4 @@ Do you know about other languages or papers presenting similar functionalities?
 
 I'm interested in learning more about them.
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@_fsantanna](https://twitter.com/_fsantanna/status/1505195728502722566).
+Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1505195728502722566).
