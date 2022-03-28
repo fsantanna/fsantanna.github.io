@@ -3,7 +3,7 @@
 <img src="twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
-- On rewriting [Pingus][pingus.md] from C++ to Ceu
+- On rewriting [Pingus](pingus.md) from C++ to Ceu
     - **A structured main menu**
     - Menu [buttons](buttons.md) as tasks
 
@@ -28,32 +28,32 @@ Let's discuss it in a top-down approach, starting with the main application:
 <b>type</b> Menu = <Story=(), Editor=(), ...>
 
 -- task signatures for the menu and buttons
-task main\_menu: () -> Menu
+<b>task</b> main_menu: () -> Menu
     -- returns the next screen to navigate
-task menu_button: [pos:Point, lbl:String] -> ()
+<b>task</b> menu_button: [pos:Point, lbl:String] -> ()
     -- receives a position and label to show
 
 -- spawns the game code
-spawn {
+<b>spawn</b> {
     -- the outer loop                           1️⃣
-    loop {
+    <b>loop</b> {
         -- main menu
-        var opt = await spawn main_menu ()      2️⃣
+        <b>var</b> opt = <b>await</b> <b>spawn</b> main_menu ()      2️⃣
 
         -- chosen screen
-        var lbl = ifs {
+        <b>var</b> lbl = <b>ifs</b> {
             opt ? Story  { "Story"  }
             opt ? Editor { "Editor" }
             ... -- other options
         }
-        await spawn menu_button [[0,0], lbl]    2️⃣
+        <b>await</b> <b>spawn</b> menu_button [[0,0], lbl]    2️⃣
 
         -- loops back to main menu after chosen screen terminates
     }
 }
 
 -- enters the SDL engine loop
-call pico_loop ()
+<b>call</b> pico_loop ()
 </pre>
 
 The important structured mechanism is the outer loop (1️⃣) that alternates
@@ -77,7 +77,7 @@ the [previous post](pingus.md):
 The original [implementation in C++][2] uses CPS and pushes the screen
 navigation to occur inside the button click callback:
 
-```
+```cpp
 MainMenu::MainMenu () {
     ...
     start_but = gui->create<MenuButton>(...)

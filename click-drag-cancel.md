@@ -29,73 +29,73 @@ Currently, Céu lacks primitive types (e.g., strings and integers), and named
 fields, so some parts of the code might look strange.
 Anyways, here's the complete solution with [an accompanying video][4]:
 
-```
+<pre>
 ^"int.ceu"
 ^"pico.ceu"
 
 -- rectangle to control
-var rect: Rect = [[_10,_10],[_5,_5]]
+<b>var</b> rect: Rect = [[_10,_10],[_5,_5]]
 
 -- tasks to behaviors: cancel, drag and drop, click
-spawn {
+<b>spawn</b> {
     -- outer loop to restart after each behavior is detected
-    loop {
+    <b>loop</b> {
         -- first detects the first click on the rectangle
-        var dxy: Size   -- holds the offset to its center
+        <b>var</b> dxy: Size   -- holds the offset to its center
         {
-            var mouse: Point
-            await evt?Mouse?Button?Down until isPointInsideRect [mouse,rect]
-                where {
-                    set mouse = evt!Mouse!Button!Down.pos
+            <b>var</b> mouse: Point
+            <b>await</b> evt?Mouse?Button?Down <b>until</b> isPointInsideRect [mouse,rect]
+                <b>where</b> {
+                    <b>set</b> mouse = evt!Mouse!Button!Down.pos
                 }
-            set dxy = [sub [rect.pos.x,mouse.x], sub [rect.pos.y,mouse.y]]
+            <b>set</b> dxy = [sub [rect.pos.x,mouse.x], sub [rect.pos.y,mouse.y]]
         }
 
         -- then either cancel, drag/drop, or click
-        paror {
+        <b>paror</b> {
             -- cancel behavior: restores the original position on any key
-            var orig = rect
-            await evt?Key?Down until eq [evt!Key!Down.key,_SDLK_ESCAPE]
-            set rect = orig
-            output std _("Cancelled!"):_(char*)
-        } with {
+            <b>var</b> orig = rect
+            <b>await</b> evt?Key?Down <b>until</b> eq [evt!Key!Down.key,_SDLK_ESCAPE]
+            <b>set</b> rect = orig
+            <b>output</b> std _("Cancelled!"):_(char*)
+        } <b>with</b> {
             -- drag/drop behavior: must be before click (see below)
-            await evt?Mouse?Motion
-            output std _("Dragging..."):_(char*)
-            var mouse = evt!Mouse!Motion
-            watching evt?Mouse?Button?Up {   -- terminates on mouse up
+            <b>await</b> evt?Mouse?Motion
+            <b>output</b> std _("Dragging..."):_(char*)
+            <b>var</b> mouse = evt!Mouse!Motion
+            <b>watching</b> evt?Mouse?Button?Up {   -- terminates on mouse up
                 -- tracks mouse motion to move the rectangle
-                loop {
-                    set rect = [pt, rect.size]
-                        where {
-                            var pt: Point = [add [mouse.pos.x,dxy.w], add [mouse.pos.y,dxy.h]]
+                <b>loop</b> {
+                    <b>set</b> rect = [pt, rect.size]
+                        <b>where</b> {
+                            <b>var</b> pt: Point = [add [mouse.pos.x,dxy.w], add [mouse.pos.y,dxy.h]]
                         }
-                    await evt?Mouse?Motion
-                    set mouse = evt!Mouse!Motion
+                    <b>await</b> evt?Mouse?Motion
+                    <b>set</b> mouse = evt!Mouse!Motion
                 }
             }
-            output std _("Dropped!"):_(char*)
-        } with {
+            <b>output</b> std _("Dropped!"):_(char*)
+        } <b>with</b> {
             -- behavior: must be the last
             -- otherwise conflicts w/ motion termination
-            await evt?Mouse?Button?Up
-            output std _("Clicked!"):_(char*)
+            <b>await</b> evt?Mouse?Button?Up
+            <b>output</b> std _("Clicked!"):_(char*)
         }
     }
 }
 
 -- task for redrawing
-spawn {
-    loop {
-        await _1
-        output pico Pico.Output.Clear
-        output pico Pico.Output.Draw.Rect rect
-        output pico Pico.Output.Present
+<b>spawn</b> {
+    <b>loop</b> {
+        <b>await</b> _1
+        <b>output</b> pico Pico.Output.Clear
+        <b>output</b> pico Pico.Output.Draw.Rect rect
+        <b>output</b> pico Pico.Output.Present
     }
 }
 
-call pico_loop ()
-```
+<b>call</b> pico_loop ()
+</pre>
 
 Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
 

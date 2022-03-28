@@ -11,14 +11,14 @@ basic ADT mechanisms as follows:
 
 [1]: https://github.com/fsantanna/ceu
 
-```
-var pt: [Int,Int] = [10,20]  -- a pair tuple
-output std pt.1     --> 10
+<pre>
+var</b> pt: [Int,Int] = [10,20]  -- a pair tuple
+output</b> std pt.1     --> 10
 
 var ui: <(),Int> = <.2 20>   -- a pair union (either Unit or Int)
-output std ui?2     --> 1 (yes, ui holds the second Int variant)
-output std ui!2     --> 20
-```
+output</b> std ui?2     --> 1 (yes, ui holds the second Int variant)
+output</b> std ui!2     --> 20
+</pre>
 
 Tuple types and constructors use square brackets and are pretty standard.
 Union types use angle brackets and can be anonymous just like tuples.
@@ -32,23 +32,23 @@ form classic ADTs.
 The next snippet is extracted from an event library with keyboard and mouse
 events:
 
-```
-type Point = [Int,Int]
+<pre>
+<b>type</b> Point = [Int,Int]
 
-type Event = <<Int,Int>, <[Point,Int],Point>>
+<b>type</b> Event = <<Int,Int>, <[Point,Int],Point>>
            -- Key Dn/Up | Mouse Click,Motion
 
-var e: Event = <.2 <.1 [[10,20],1]>> -- a mouse click with but=1 at pos=[10,20]
-output e?1?1    --> 0 (no, this is not a key down event)
-output e!2!1.2  --> 1 (clicked mouse button number)
-```
+<b>var</b> e: Event = <.2 <.1 [[10,20],1]>> -- a mouse click with but=1 at pos=[10,20]
+<b>output</b> e?1?1    --> 0 (no, this is not a key down event)
+<b>output</b> e!2!1.2  --> 1 (clicked mouse button number)
+</pre>
 
 Instead of indexes, we can also use tuple fields and variant names as aliases:
 
-```
-type Point = [x:Int,y:Int]
+<pre>
+<b>type</b> Point = [x:Int,y:Int]
 
-type Event = <
+<b>type</b> Event = <
     Key = <
         Down = Int,
         Up = Int
@@ -59,10 +59,10 @@ type Event = <
     >
 >
 
-var e = Event.Mouse.Click [[10,20], 1]
-output e?Key?Down        --> 0 (no, this is not a key down event)
-output e!Mouse!Click.but --> 1 (clicked mouse button number)
-```
+<b>var</b> e = Event.Mouse.Click [[10,20], 1]
+<b>output</b> e?Key?Down        --> 0 (no, this is not a key down event)
+<b>output</b> e!Mouse!Click.but --> 1 (clicked mouse button number)
+</pre>
 
 Note how nested anonymous unions can induce type hierarchies with arbitrary
 levels:
@@ -70,12 +70,13 @@ An `Event.Key.Up` could be a subtype of `Event.Key`, and both could be subtypes
 of `Event`.
 We are therefore experimenting with ADT subtyping in Ceu:
 
-```
-var clk: Event.Mouse.Click = Event.Mouse.Click [[10,20], 1]
-var evt: Event = clk                                    -- upcast always ok
-var cst: Event.Mouse.Click = clk :: Event.Mouse.Click   -- downcast success
-var err: Event.Key = clk :: Event.Key                   -- downcast error
-```
+<pre>
+<b>var</b> clk: Event.Mouse.Click = Event.Mouse.Click [[10,20], 1]
+<b>var</b> evt: Event = clk                                    -- upcast always ok
+<b>var</b> cst: Event.Mouse.Click = clk :: Event.Mouse.Click   -- downcast success
+<b>var</b> err: Event.Key = clk :: Event.Key                   -- downcast error
+</pre>
+</pre>
 
 One peculiarity of this design is that the hierarchy chain must always be
 explicit: `Click` is not a type by itself without the full path
@@ -87,8 +88,8 @@ position, while `Event.Key.Down` and `Event.Key.Up` both hold the key code.
 In Ceu, subtypes can share and reuse fields attached to their supertypes.
 Hence, we can rewrite the `Event` type hierarchy as follows:
 
-```
-type Event = <
+<pre>
+<b>type</b> Event = <
     Key = [key:Int] + <  -- [key:Int] is attached to subtypes:
         Down = (),       --     Event.Key.Down [key:Int]
         Up = ()
@@ -99,12 +100,12 @@ type Event = <
     >
 >
 
-var mot = Event.Mouse.Motion [[10,20]]
-output std mot!Mouse!Motion.pos.x   --> 10
+<b>var</b> mot = Event.Mouse.Motion [[10,20]]
+<b>output</b> std mot!Mouse!Motion.pos.x   --> 10
 
-var key = Event.Key.Up [65]
-output std key!Key!Up.key           --> 65
-```
+<b>var</b> key = Event.Key.Up [65]
+<b>output</b> std key!Key!Up.key           --> 65
+</pre>
 
 These are early experiments and there is still a lot to do about generics,
 variance, recursion, and memory management though...
