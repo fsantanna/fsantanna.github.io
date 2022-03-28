@@ -38,7 +38,7 @@ task main_menu: () -> Menu {
 
 -- spawns the game code
 spawn {
-    -- the outer loop
+    -- the outer loop :one: 1️⃣
     loop {
         -- main menu
         var opt = await spawn main_menu ()
