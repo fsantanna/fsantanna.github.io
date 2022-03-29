@@ -7,6 +7,7 @@
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - **A structured main menu**
+
 <!--
     - Menu [buttons](buttons.md) as local tasks
 -->
