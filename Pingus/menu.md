@@ -7,7 +7,9 @@
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - **A structured main menu**
+<!--
     - Menu [buttons](buttons.md) as local tasks
+-->
 
 A main menu typically displays a set of buttons that allows players to navigate
 the game.
