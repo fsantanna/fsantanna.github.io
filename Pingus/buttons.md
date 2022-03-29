@@ -76,8 +76,7 @@ context.
 For instance, note that the `return` statements inside the `par` branches
 terminate the enclosing `main_menu` as a whole.
 I believe this kind of construct is not possible in programming languages that
-provide [structured concurrency mechanisms](structured-concurrency.md) as
-libraries.
+provide [structured concurrency mechanisms](../sc.md) as libraries.
 
 Finally, the most relevant structured mechanism in the menu is how Ceu handles
 the lifespan of tasks.
