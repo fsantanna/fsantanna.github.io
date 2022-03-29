@@ -62,8 +62,8 @@ Let's discuss it in a top-down approach, starting with the main application:
 The relevant structured mechanism in the code is the outer loop (1️⃣), which
 alternates between the main menu and the chosen screen.
 These screens can be arbitrarily complex and are handled with the `spawn-await`
-combination (2️⃣), which resembles conventional function calls: spawn the task
-and await its termination.
+combination (2️⃣), which resembles standard function calls: spawn the task and
+await its termination.
 We will discuss the `main_menu` and `menu_button` implementations in future
 posts.
 While the main task waits in the loop, the current screen executes in a
@@ -72,11 +72,13 @@ In the meantime, the language keeps the loop context alive (i.e., locals and
 program counter) similarly to coroutines.
 This [direct style][1] with `spawn-await` contrasts with the arguably more
 intricate *continuation passing style (CPS)*, which is one of the control-flow
-pattern identified in the [previous post](pingus.md):
+patterns identified in the [previous post](pingus.md):
 
 - **Continuation Passing:** The completion of a long-lasting activity may
    carry a continuation, i.e., some action to execute next.
     - Examples: interactive dialogs, menu transitions.
+
+---
 
 The original implementation in C++ uses CPS and pushes the screen navigation to
 occur inside the [button click callback][2], thus textually far away from the

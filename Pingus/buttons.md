@@ -90,7 +90,7 @@ Hence, the `main_menu` handles at least 2x tasks for each menu option, which
 are all active at the same time.
 When a `return` is reached, it escapes all blocks in the parent task, aborting
 all nested tasks automatically.
-This hierarchy of tasks is one of the control-flow pattern identified in the
+This hierarchy of tasks is one of the control-flow patterns identified in the
 [previous post](pingus.md):
 
 - **Lifespan Hierarchies:** Entities typically form a lifespan hierarchy in
