@@ -134,4 +134,4 @@ control-flow mechanism.
 - Is the top-down code understandable (even without the menu and button details)?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1508771445899501583).
