@@ -72,7 +72,7 @@ In the meantime, the language keeps the loop context alive (i.e., locals and
 program counter) similarly to coroutines.
 This [direct style][1] with `spawn-await` contrasts with the arguably more
 intricate *continuation passing style (CPS)*, which is one of the control-flow
-patterns identified in the [previous post](pingus.md):
+patterns described in the [previous post](pingus.md):
 
 - **Continuation Passing:** The completion of a long-lasting activity may
    carry a continuation, i.e., some action to execute next.
