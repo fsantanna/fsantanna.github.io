@@ -3,6 +3,10 @@
 <img src="twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
+- **On rewriting Pingus from C++ to Ceu**
+    - A structured [main menu](menu.md)
+    - Menu [buttons](buttons.md) as tasks
+
 <img src="pingus.png" align="right" width="350">
 
 A few years ago, I wrote a [blog post][3] (and a simplified [paper][4]) on
@@ -20,8 +24,8 @@ more productive alternative for game logic development:
 > the game logic more concisely.
 
 SSRP can be considered a flavor of *"Structured Concurrency"* (discussed in a
-previous [blog post][5]) with a focus on real-time interactive applications,
-such as video games.
+previous [blog post][structured-concurrency.md]) with a focus on real-time
+interactive applications, such as video games.
 
 The bulk of the study is a qualitative analysis of the programming techniques
 we applied during the rewriting process.
@@ -64,7 +68,6 @@ The goal is twofold:
 [2]: https://en.wikipedia.org/wiki/Lemmings_(video_game)
 [3]: https://fsantanna.github.io/pingus/
 [4]: http://ceu-lang.org/chico/ceu_sbgames18.pdf
-[5]: https://fsantanna.github.io/structured-concurrency.html
 
 ---
 

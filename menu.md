@@ -20,7 +20,7 @@ In the demo figure, we symbolize the chosen screens as clickable buttons
 associated with the user choices.
 Clicking the button again terminates the screen and returns to the main menu.
 Our goal is to apply [structured reactive techniques](pingus.md) in our
-implementation.
+implementation in Ceu.
 Let's discuss it in a top-down approach, starting with the main application:
 
 <pre>
@@ -61,7 +61,8 @@ alternates between the main menu and the chosen screen.
 These screens can be arbitrarily complex and are handled with the `spawn-await`
 combination (2️⃣), which resembles conventional function calls: spawn the task
 and await its termination.
-We discuss the `main_menu` and `menu_button` implementations in a future post.
+We will discuss the `main_menu` and `menu_button` implementations in future
+posts.
 While the main task waits in the loop, the current screen executes in a
 separate task, possibly reacting to events and spawning auxiliary tasks.
 In the meantime, the language keeps the loop context alive (i.e., locals and
@@ -74,9 +75,9 @@ pattern identified in the [previous post](pingus.md):
    carry a continuation, i.e., some action to execute next.
     - Examples: interactive dialogs, menu transitions.
 
-The original [implementation in C++][2] uses CPS and pushes the screen
-navigation to occur inside the button click callback, thus textually far away
-from the main game function:
+The original implementation in C++ uses CPS and pushes the screen navigation to
+occur inside the [button click callback][2], thus textually far away from the
+main game function:
 
 ```cpp
 MainMenu::MainMenu () {
@@ -96,7 +97,7 @@ void MainMenu::on_click (MenuButton* button) {
 }
 ```
 
-The [implementation in C++][3] also relies on an explicit stack to alternate
+The implementation in C++ also relies on an [explicit stack][3] to alternate
 between the main menu and the chosen screen: it pushes a new screen on top of
 the main menu, which must be explicitly popped when terminating:
 
@@ -125,6 +126,6 @@ control-flow mechanism.
 
 - What other typical game behaviors rely on CPS?
 - How do you feel about the direct style implementation?
+- Is the top-down code understandable (even without the menu and button details)?
 
 Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
-
