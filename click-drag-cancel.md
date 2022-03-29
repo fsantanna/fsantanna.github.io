@@ -97,7 +97,8 @@ Anyways, here's the complete solution with [an accompanying video][4]:
 <b>call</b> pico_loop ()
 </pre>
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
+Comment on <img src="twitter.png" style="vertical-align:middle">
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
 
 [0]: https://twitter.com/dubroy
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/

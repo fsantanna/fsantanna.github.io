@@ -1,13 +1,13 @@
-# Menu buttons as tasks
+# Menu buttons as local tasks
 
-<img src="twitter.png" style="vertical-align:middle">
+<img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
 <img src="menu.gif" align="right" width="350">
 
 - On rewriting [Pingus][pingus.md] from C++ to Ceu
     - A structured [main menu](menu.md)
-    - **Menu buttons as tasks**
+    - **Menu buttons as local tasks**
 
 In the [previous post](menu.md), we discussed the outermost code to alternate
 between the main menu and game screen, leaving out the implementations of the
@@ -129,4 +129,5 @@ task menu_button: [pos:Point,tit:_(char*)] -> () {
 
 - Do you know mechanisms for anonymous tasks in other languages?
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+Comment on <img src="../twitter.png" style="vertical-align:middle">
+[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).

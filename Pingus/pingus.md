@@ -1,11 +1,11 @@
 # On rewriting Pingus from C++ to Ceu
 
-<img src="twitter.png" style="vertical-align:middle">
+<img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
 - **On rewriting Pingus from C++ to Ceu**
     - A structured [main menu](menu.md)
-    - Menu [buttons](buttons.md) as tasks
+    - Menu [buttons](buttons.md) as local tasks
 
 <img src="pingus.png" align="right" width="350">
 
@@ -73,4 +73,5 @@ The goal is twofold:
 
 - Do you identify other general control-flow patterns in games?
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1508091964390092810).
+Comment on <img src="../twitter.png" style="vertical-align:middle">
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1508091964390092810).

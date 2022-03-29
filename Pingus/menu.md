@@ -1,13 +1,13 @@
 # A structured main menu
 
-<img src="twitter.png" style="vertical-align:middle">
+<img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
 <img src="menu.gif" align="right" width="350">
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - **A structured main menu**
-    - Menu [buttons](buttons.md) as tasks
+    - Menu [buttons](buttons.md) as local tasks
 
 A main menu typically displays a set of buttons that allows players to navigate
 the game.
@@ -128,4 +128,5 @@ control-flow mechanism.
 - How do you feel about the direct style implementation?
 - Is the top-down code understandable (even without the menu and button details)?
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+Comment on <img src="../twitter.png" style="vertical-align:middle">
+[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).

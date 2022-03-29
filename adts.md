@@ -119,4 +119,5 @@ Do you know about other languages or papers presenting similar functionalities?
 
 I'm interested in learning more about them.
 
-Comment on <img src="twitter.png" style="vertical-align:middle"> [@\_fsantanna](https://twitter.com/_fsantanna/status/1505195728502722566).
+Comment on <img src="twitter.png" style="vertical-align:middle">
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1505195728502722566).
