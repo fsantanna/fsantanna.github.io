@@ -5,13 +5,14 @@
 
 <img src="menu.gif" align="right" width="350">
 
-- On rewriting [Pingus][pingus.md] from C++ to Ceu
+- On rewriting [Pingus](pingus.md) from C++ to Ceu
     - A structured [main menu](menu.md)
     - **Menu buttons as local tasks**
 
 In the [previous post](menu.md), we discussed the outermost code to alternate
-between the main menu and game screen, leaving out the implementations of the
-`main_menu` and `menu_button` tasks:
+between the main menu and game screen.
+The code that follows is exactly the same, still leaving out the
+implementations of the `main_menu` and `menu_button` tasks:
 
 <pre>
 -- enumeration with the possible menu choices
@@ -25,10 +26,10 @@ between the main menu and game screen, leaving out the implementations of the
 
 -- spawns the game code
 <b>spawn</b> {
-    -- the outer loop                         1️⃣
+    -- the outer loop
     <b>loop</b> {
         -- main menu
-        <b>var</b> opt = <b>await</b> <b>spawn</b> main_menu ()    2️⃣
+        <b>var</b> opt = <b>await</b> <b>spawn</b> main_menu ()
 
         -- chosen screen
         <b>var</b> lbl = <b>ifs</b> {
@@ -36,7 +37,7 @@ between the main menu and game screen, leaving out the implementations of the
             opt ? Editor { "Editor" }
             ... -- other options
         }
-        <b>await</b> <b>spawn</b> menu_button [[0,0], lbl]  2️⃣
+        <b>await</b> <b>spawn</b> menu_button [[0,0], lbl]
 
         -- loops back to menu after screen terminates
     }
@@ -48,40 +49,41 @@ between the main menu and game screen, leaving out the implementations of the
 
 ---
 
+Following the top-down approach, in this post, we discuss the `main_menu` and
+leave the `menu_button` implementation for the next post.
 The `main_menu` task spawns a set of `menu_button` tasks in parallel, each one
-corresponding to a menu option, and returns the clicked option as an
-enumeration:
+corresponding to a menu option.
+The menu then returns the clicked option as an enumeration:
 
 <pre>
 <b>task</b> main_menu: () -> Menu {
     <b>par</b> {
-        <b>await</b> <b>spawn</b> menu_button [[-125,35], "Story"]  1️⃣
-        <b>return</b> Menu.Story
+        <b>await</b> <b>spawn</b> menu_button [[-125,35], "Story"]    1️⃣
+        <b>return</b> Menu.Story                               2️⃣
     } <b>with</b> {
-        <b>await</b> <b>spawn</b> menu_button [[ 125,35], "Editor"] 2️⃣
+        <b>await</b> <b>spawn</b> menu_button [[ 125,35], "Editor"]
         <b>return</b> Menu.Editor
     } <b>with</b> {
-        ...     -- other options
+        ... -- other options
     }
 }
 </pre>
 
-The `main_menu` expects that a `menu_button` terminates when it is clicked (2️⃣)
-in order to return the corresponding enumeration to the outermost code (2️⃣).
-Like the outermost code, we use `spawn-await`'s direct style to nest arbitrary
-task.
-Here, we also use the `par` construct which is a rich structured mechanism
-whose branches expand to anonymous tasks that capture its enclosing lexical
-context.
-For instance, note that the `return` statements inside the `par` branches
-terminate the enclosing `main_menu` as a whole.
-I believe this kind of construct is not possible in programming languages that
-provide [structured concurrency mechanisms](../sc.md) as libraries.
+The `main_menu` expects that a `menu_button` terminates when it is clicked (1️⃣)
+in order to return the corresponding enumeration (2️⃣).
+Like in the outermost code, we use the direct style of `spawn-await` to nest
+arbitrary tasks.
+Here, we also use the `par` composition whose branches expand to anonymous
+tasks that capture their enclosing lexical context.
+For instance, note that the `return` terminates the enclosing `main_menu` as a
+whole, disregarding the anonymous task between them.
+I believe that this kind of mechanism is not possible in programming languages
+that provide [structured concurrency](../sc.md) as a library.
 
-Finally, the most relevant structured mechanism in the menu is how Ceu handles
+Finally, the most relevant structured mechanism in this code is how Ceu handles
 the lifespan of tasks.
-A task in Ceu is like a local variable, i.e., its lifespan is attached to the
-block enclosing it.
+A task is like a local variable, i.e., its lifespan is attached to the block
+enclosing it.
 In the `main_menu`, each `par` branch spawns an anonymous task, and each
 anonymous task spawns a `menu_button` task.
 Hence, the `main_menu` handles at least 2x tasks for each menu option, which
@@ -96,38 +98,21 @@ This hierarchy of tasks is one of the control-flow pattern identified in the
    children.
     - Examples: UI containers, particle systems.
 
----
+The original implementation in C++ relies on an [explicit container][1] to hold
+the buttons, which are destroyed together with the menu object.
+In comparison to local tasks, the main drawbacks of object containers is that
+    (1) all nested objects share the same lifespan of the container, and
+    (2) the lifespan of the container matches the lifespan of its enclosing
+        object.
+As a result, lifespan hierarchies in containers cannot be fine grained unless
+they rely on manual management (e.g., `add` and `remove` method calls).
 
-<!--
-3. **Dispatching Hierarchies:** Entities typically form a dispatching hierarchy
-   in which a container that receives a stimulus automatically forwards it to
-   its managed children.
-    - Examples: redraw & update callbacks.
-
-```
-task menu_button: [pos:Point,tit:_(char*)] -> () {
-    var size: Size
-    output pico Pico.Output.Get.Size.Image [/size, _("data/images/menuitem.png")]
-
-    spawn {
-        every evt?Draw {
-            output pico Pico.Output.Draw.Image [arg.pos, _("data/images/menuitem.png")]
-            output pico Pico.Output.Set.Font [_("data/fonts/film-cryptic/Filmcryptic.ttf"),_45]
-            output pico Pico.Output.Draw.Text [arg.pos, arg.tit]
-        }
-    }
-
-    await evt?Mouse?Button?Down until isPointVsRect [pos,[arg.pos,size]]
-        where {
-            var pos = evt!Mouse!Button!Down.pos
-        }
-}
-```
--->
+[1]: https://github.com/Pingus/pingus/blob/master/src/pingus/screens/pingus_menu.cpp#L52
 
 ---
 
-- Do you know mechanisms for anonymous tasks in other languages?
+- Are there similar mechanisms for anonymous tasks in other languages?
+- Do you agree that object containers cannot express fine-grained lifespans?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
