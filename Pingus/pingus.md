@@ -5,7 +5,10 @@
 
 - **On rewriting Pingus from C++ to Ceu**
     - A structured [main menu](menu.md)
+
+<!--
     - Menu [buttons](buttons.md) as local tasks
+-->
 
 <img src="pingus.png" align="right" width="350">
 
