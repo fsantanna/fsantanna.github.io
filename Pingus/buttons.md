@@ -60,7 +60,7 @@ enumeration (2️⃣):
         <b>await</b> <b>spawn</b> menu_button [[-125,35], "Story"]    1️⃣
         <b>return</b> Menu.Story                               2️⃣
     } <b>with</b> {
-        <b>await</b> <b>spawn</b> menu_button [[ 125,35], "Editor"]  1️⃣
+        <b>await</b> <b>spawn</b> menu_button [[ 125,35], "Editor"]   1️⃣
         <b>return</b> Menu.Editor                              2️⃣
     } <b>with</b> {
         ... -- other options (1️⃣,2️⃣)
