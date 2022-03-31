@@ -115,4 +115,4 @@ they rely on manual management (e.g., through `add` and `remove` method calls).
   automatically?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1509494376589926404).
