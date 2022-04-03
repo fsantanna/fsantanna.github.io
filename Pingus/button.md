@@ -17,7 +17,7 @@ between screens and the [main menu buttons](buttons.md):
 -- enumeration with the possible menu choices
 <b>type</b> Menu = <Story=(), Editor=(), ...>
 
-<b>task</b> menu_button: [pos:Point, lbl:String] -> ()      👈 (this post)
+<b>task</b> menu_button: [pos:Point, lbl:String] -> ()  👈 (this post)
     -- receives a position and label to show
 
 <b>task</b> main_menu: () -> Menu {
@@ -86,15 +86,15 @@ The `menu_button` task spawns a dedicated task to redraw itself on each
 occurrence of `evt?Draw` (1️⃣), which is an engine event to signal that the
 screen must be updated.
 While the redrawing task executes in the background, the `menu_button` also
-waits for an `evt?Mouse?Button?Down` event (1️⃣).
+waits for an `evt?Mouse?Button?Down` event (2️⃣).
 If the click occurs inside the button, the `menu_button` task awakes and
 terminates.
 Its termination awakes the `main_menu` task, which in turn returns the chosen
 screen to the outermost code.
 
 The relevant structured mechanism in this code is how a deep nested task, such
-as `menu_button`, can react directly to engine events bypassing the task
-hierarchy completely.
+as `menu_button`, can react directly to engine events directly (2️⃣ and 2️⃣),
+bypassing the task hierarchy entirely.
 This self-dispatching mechanism is one of the control-flow patterns in the
 [previous post](pingus.md):
 
@@ -108,9 +108,9 @@ This self-dispatching mechanism is one of the control-flow patterns in the
 The original implementation in C++ needs to dispatch the events explicitly
 through the containers hierarchy, which is split in multiple files.
 Starting at the engine, the `draw` method is dispatched through the path
-`ScreenManager -> GUIScreen -> GUIManager -> GroupComponent -> SurfaceButton`:
+`ScreenManager` -> `GUIScreen` -> `GroupComponent` -> `SurfaceButton`:
 
-```
+```cpp
 // screen_manager.cpp:
 // https://github.com/Pingus/pingus/blob/master/src/engine/screen/screen_manager.cpp#L200
 void ScreenManager::update (...) {
@@ -147,8 +147,8 @@ void SurfaceButton::draw (...) {
 }
 ```
 
-Understanding the method dispatch requires examining at least 5 files,
-excluding going through the class hierarchy.
+Understanding the method dispatch requires examining at least 4 files, not
+including the class hierarchy.
 For instance, we started examining the `PingusMenu` implementing the main menu,
 which extends the `GUIScreen` in the dispatching path.
 This is only for redrawing, as the `update` dispatch goes through a similar
@@ -170,8 +170,8 @@ its [synchronous execution model](../sc.md):
 
 ---
 
-- ???
-- ???
+- How long can dispatching and class hierarchies be in C++?
+- How unclear can dispatching in lexical order become?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
