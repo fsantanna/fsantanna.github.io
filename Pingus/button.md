@@ -33,7 +33,7 @@ between screens and the [main menu buttons](buttons.md):
 }
 
 -- spawns the game code
-<b>spawn</b> {                                          1️⃣
+<b>spawn</b> {                                     1️⃣
     -- the outer loop
     <b>loop</b> {
         -- main menu
@@ -59,15 +59,15 @@ In this post, we complete the structured main menu with the `menu_button`
 implementation.
 The outermost code (1️⃣) spawns the `main_menu` task (2️⃣), which spawns several
 `menu_button` tasks in parallel (3️⃣).
-The button receives a position and label to show and is responsible for
-redrawing itself (1️⃣) and terminating itself on a mouse click (2️⃣):
+Each button receives a position and label to show, and is responsible for
+redrawing (1️⃣) and terminating itself on a mouse click (2️⃣) as follows:
 
 <pre>
 <b>task</b> menu_button: [pos:Point, tit:String] -> () {
     <b>var</b> size: Size
     <b>output</b> Get.Size.Image [/size, "data/images/menuitem.png"]
 
-    <b>spawn {
+    <b>spawn</b> {
         <b>every</b> evt?Draw {    1️⃣
             <b>output</b> Draw.Image [arg.pos, "data/images/menuitem.png"]
             <b>output</b> Set.Font   ["data/fonts/film-cryptic/Filmcryptic.ttf",45]
