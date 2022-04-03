@@ -7,7 +7,7 @@
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - A structured [main menu](menu.md)
-    - **Menu buttons as local tasks**
+    - **Menu buttons as local tasks**     👈 (this post)
     - A self-reacting [button](button.md)
 
 In the [previous post](menu.md), we discussed the outermost code to alternate
