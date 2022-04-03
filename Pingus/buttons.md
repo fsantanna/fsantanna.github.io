@@ -8,6 +8,7 @@
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - A structured [main menu](menu.md)
     - **Menu buttons as local tasks**
+    - A self-reacting [button](button.md)
 
 In the [previous post](menu.md), we discussed the outermost code to alternate
 between the main menu and the chosen screens:
@@ -17,9 +18,9 @@ between the main menu and the chosen screens:
 <b>type</b> Menu = <Story=(), Editor=(), ...>
 
 -- task signatures for the menu and buttons
-<b>task</b> main_menu: () -> Menu
+<b>task</b> main_menu: () -> Menu                       👈 (this post)
     -- returns the chosen screen to navigate
-<b>task</b> menu_button: [pos:Point, lbl:String] -> ()
+<b>task</b> menu_button: [pos:Point, lbl:String] -> ()  👈 (next post)
     -- receives a position and label to show
 
 -- spawns the game code
@@ -68,8 +69,8 @@ enumeration (2️⃣):
 }
 </pre>
 
-The `main_menu` expects that a `menu_button` terminates when it is clicked (1️⃣)
-in order to return the corresponding enumeration (2️⃣).
+The `main_menu` task expects that a `menu_button` terminates when it is clicked
+(1️⃣) in order to return the corresponding enumeration (2️⃣).
 Like in the outermost code, we use the direct style of `spawn-await` to nest
 arbitrary tasks.
 Here, we also use the `par` composition whose branches expand to anonymous

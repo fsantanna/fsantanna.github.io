@@ -7,6 +7,8 @@
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - **A structured main menu**
+    - Menu [buttons](buttons.md) as local tasks
+    - A self-reacting [button](button.md)
 
 <!--
     - Menu [buttons](buttons.md) as local tasks
@@ -31,9 +33,9 @@ Let's discuss it in a top-down approach, starting with the main application:
 <b>type</b> Menu = <Story=(), Editor=(), ...>
 
 -- task signatures for the menu and buttons
-<b>task</b> main_menu: () -> Menu
+<b>task</b> main_menu: () -> Menu                       👈 (next posts)
     -- returns the chosen screen to navigate
-<b>task</b> menu_button: [pos:Point, lbl:String] -> ()
+<b>task</b> menu_button: [pos:Point, lbl:String] -> ()  👈 (next posts)
     -- receives a position and label to show
 
 -- spawns the game code
