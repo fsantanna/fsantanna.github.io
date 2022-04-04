@@ -3,12 +3,11 @@
 <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
-- **On rewriting Pingus from C++ to Ceu**
+- **On rewriting Pingus from C++ to Ceu** 👈 (this post)
     - A structured [main menu](menu.md)
-
-<!--
     - Menu [buttons](buttons.md) as local tasks
--->
+    - A self-reacting [button](button.md)
+    - A structured main menu: [full code](menu-full.md)
 
 <img src="pingus.png" align="right" width="350">
 

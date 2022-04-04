@@ -6,9 +6,10 @@
 <img src="menu.gif" align="right" width="350">
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
-    - **A structured main menu**          👈 (this post)
+    - **A structured main menu** 👈 (this post)
     - Menu [buttons](buttons.md) as local tasks
     - A self-reacting [button](button.md)
+    - A structured main menu: [full code](menu-full.md)
 
 <!--
     - Menu [buttons](buttons.md) as local tasks
