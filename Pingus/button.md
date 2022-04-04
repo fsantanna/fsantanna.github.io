@@ -171,7 +171,7 @@ its [synchronous execution model](../sc.md):
 ---
 
 - How long can dispatching and class hierarchies be in C++?
-- How unclear can dispatching in lexical order become?
+- How unclear can lexical order dispatching become?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).

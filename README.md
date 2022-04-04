@@ -7,7 +7,4 @@
 - `[2022-mar-26]` On rewriting [Pingus](Pingus/pingus.md) from C++ to Ceu
     - `[2022-mar-29]` A structured [main menu](Pingus/menu.md)
     - `[2022-mar-31]` Menu [buttons](Pingus/buttons.md) as local tasks
-
-<!--
     - `[2022-apr-03]` A self-reacting [button](Pingus/button.md)
--->
