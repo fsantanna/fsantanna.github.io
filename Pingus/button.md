@@ -59,8 +59,8 @@ In this post, we complete the structured main menu with the `menu_button`
 implementation.
 The outermost code (1️⃣) spawns the `main_menu` task (2️⃣), which spawns several
 `menu_button` tasks in parallel (3️⃣).
-Each button receives a position and label to show, and is responsible for
-redrawing (1️⃣) and terminating itself on a mouse click (2️⃣) as follows:
+In the code below, each button receives a position and label to show, and is
+responsible for redrawing (1️⃣) and terminating itself on a mouse click (2️⃣):
 
 <pre>
 <b>task</b> menu_button: [pos:Point, tit:String] -> () {
@@ -92,9 +92,9 @@ terminates.
 Its termination awakes the `main_menu` task, which in turn returns the chosen
 screen to the outermost code.
 
-The relevant structured mechanism in this code is how a deep nested task, such
-as `menu_button`, can react directly to engine events directly (2️⃣ and 2️⃣),
-bypassing the task hierarchy entirely.
+The relevant structured mechanism in this code is how deep nested tasks, such
+as `menu_button`, can react to engine events directly (1️⃣ and 2️⃣), bypassing the
+task hierarchy entirely.
 This self-dispatching mechanism is one of the control-flow patterns in the
 [previous post](pingus.md):
 
@@ -106,9 +106,10 @@ This self-dispatching mechanism is one of the control-flow patterns in the
 ---
 
 The original implementation in C++ needs to dispatch the events explicitly
-through the containers hierarchy, which is split in multiple files.
+through its containers hierarchy, which is split in multiple files.
 Starting at the engine, the `draw` method is dispatched through the path
-`ScreenManager` -> `GUIScreen` -> `GroupComponent` -> `SurfaceButton`:
+`ScreenManager` -> `GUIScreen` -> `GroupComponent` -> `SurfaceButton`, which
+ultimately draws the button on the screen:
 
 ```cpp
 // screen_manager.cpp:
@@ -151,7 +152,7 @@ Understanding the method dispatch requires examining at least 4 files, not
 including the class hierarchy.
 For instance, we started examining the `PingusMenu` implementing the main menu,
 which extends the `GUIScreen` in the dispatching path.
-This is only for redrawing, as the `update` dispatch goes through a similar
+This all only for redrawing, as the `update` dispatch goes through a similar
 hierarchy.
 
 ---
@@ -164,9 +165,10 @@ its [synchronous execution model](../sc.md):
     This is a common assumption for C++ methods and callbacks as well.
 - Lexical determinism: tasks react in sequence in the order they appear in the
     code. It's the programmer responsibility to arrange them in a meaninful
-    way. For instance, a background image should be spawned before the buttons.
-    This is also a common assumption in C++ dispatching call, although they are
-    more explicit.
+    way. For instance, a (hypothetical) background image should be spawned
+    before the buttons so that they are redrawn on top.
+    This is also a common assumption in C++ dispatching calls, although they
+    are more explicit.
 
 ---
 
