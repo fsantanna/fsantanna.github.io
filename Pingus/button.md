@@ -176,4 +176,4 @@ its [synchronous execution model](../sc.md):
 - How unclear can lexical order dispatching become?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1510940429381947393).
