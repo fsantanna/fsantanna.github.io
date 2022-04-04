@@ -3,7 +3,7 @@
 <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
-<img src="menu.gif" align="right" width="350">
+<img src="menu.gif" align="right" width="250">
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - A structured [main menu](menu.md)
@@ -14,18 +14,18 @@
 This is the full commented code for the structured main menu:
 
 <pre>
--- include auxiliary files
-^"prelude.ceu"
-^"int.ceu"
-^"float.ceu"
-^"pico.ceu"
-
 -- The language still misses very basic functionality like primitive integers
 -- and strings. Hence, the code relies on native C symbols, which are
 -- prefixed with an underscore (e.g., `_255` and `_("Story")`).
 -- `Pico` is a simple graphical library based on SDL.
 
--- set initial graphical properties
+-- Includes auxiliary files
+^"prelude.ceu"
+^"int.ceu"
+^"float.ceu"
+^"pico.ceu"
+
+-- Sets the initial window properties
 <b>output</b> Pico.Set.Title _("Pingus")
 <b>output</b> Pico.Set.Size [_641,_481]
 <b>output</b> Pico.Set.Zoom [_100,_100]
