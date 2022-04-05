@@ -3,7 +3,7 @@
 <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
-<img src="menu.gif" align="right" width="350">
+<img src="menu.gif" align="right" width="250">
 
 - On rewriting [Pingus](pingus.md) from C++ to Ceu
     - A structured [main menu](menu.md)
