@@ -116,4 +116,4 @@ This is the full commented code for the structured main menu:
 </pre>
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1511284685250387972).
