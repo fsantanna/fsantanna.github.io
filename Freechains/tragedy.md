@@ -12,11 +12,11 @@ https://www.ft.com/content/ec74ce54-d3e1-11e7-8c9a-d9c0a5c8d5c9
 [Freechains][1] is a permissionless social media protocol with integrated
 reputation.
 
-A user posts a message to a forum (a *chain*) and all other users subscribed to
-the same forum eventually receive the message.
-Users spend their reputation to post new messages and gain reputation from
-consolidated posts.
-Users can like and dislike messages from other users, which transfer reputation
+A user posts a message to a forum (a *chain*) and other users subscribed to the
+same forum eventually receive the message.
+Users spend reputation tokens, known as `reps`, to post new messages and gain
+`reps` as posts consolidate.
+Users can like and dislike messages from other users, which transfer `reps`
 between them.
 
 # Freechains vs the Tragedy of the Commons
@@ -35,9 +35,8 @@ Freechains, on the other hand, relies on a reputation system that embraces
 subjectivity and locality to escape the tragedy of the commons:
 
 1. Users can create forums with their own subjective rules (netiquettes).
-2. Creators receive initial reputation tokens, known as `reps`, to redistribute
-   to new users.
-3. Users need `reps` to post.
+2. Creators receive initial `reps` to redistribute to new users.
+3. Users must have `reps` to post.
 4. Consolidated posts generate new `reps` to authors.
 5. Likes and dislikes transfer `reps` between users.
 
