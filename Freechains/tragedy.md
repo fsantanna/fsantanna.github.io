@@ -9,8 +9,8 @@
 https://www.ft.com/content/ec74ce54-d3e1-11e7-8c9a-d9c0a5c8d5c9
 -->
 
-[Freechains][1] is a permissionless social media protocol with integrated
-reputation.
+[Freechains][1] is a permissionless social media protocol with an integrated
+reputation system.
 
 A user posts a message to a chain (a forum) and all other users subscribed to
 the same chain eventually receive the message.
@@ -19,7 +19,7 @@ consolidated posts.
 Users can like and dislike messages from other users, which transfer reputation
 between them.
 
-# Freechains vs Tragedy of the Commons
+# Freechains vs the Tragedy of the Commons
 
 Social media platforms suffer from the [tragedy of the commons][2]:
     the more users are in the platform,
@@ -29,20 +29,21 @@ Social media platforms suffer from the [tragedy of the commons][2]:
 Users act on their own interests, contrarily to the common good, causing the
 platforms to collapse.
 There is no principled and localized coordination, but only centralized and
-generic counter-abuse measures.
+generic counter-abuse protection.
 
 Freechains relies on a reputation system that embraces locality and
 subjectivity to escape the tragedy of the commons:
 
-1. Users can create forum chains with their own subjective rules (netiquettes).
-2. Creators receive initial reputation tokens (`reps`) to distribute to new users.
+1. Users can create forums with their own subjective rules (netiquettes).
+2. Creators receive initial reputation tokens, known as `reps`, to redistribute
+   to new users.
 3. Users need `reps` to post.
-4. Consolidated posts generate new `reps` to their authors.
+4. Consolidated posts generate new `reps` to authors.
 5. Likes and dislikes transfer `reps` between users.
 
 These rules
-    support local communities with common interests (rules `1` and `2`),
-    prevent abusive behavior from free riders (rule `2`),
+    support local communities sharing interests (rules `1` and `2`),
+    prevent abusive behavior from free riders (rule `3`),
     encourage authoring and steady growth (rule `4`), and
     lead to descentralization of power (rules `4` and `5`).
 
@@ -51,7 +52,7 @@ These rules
 Freechains requires a consensus mechanism to prevent free riders to double
 spend `reps` to abuse the system.
 
-Bitcoin was the first protocol to ensure consensus on a permissionless newtork.
+Bitcoin was the first protocol to support permissionless consensus.
 However, Bitcoin and cryptocurrencies in general are not suitable for social
 media:
 

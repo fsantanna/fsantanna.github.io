@@ -1,6 +1,7 @@
 <img src="twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
+- `[2022-jun-11]` Freechains vs the [Tragedy of the Commons](Freechains/tragedy.md)
 - `[2022-fev-19]` A toy problem: [Drag, Click, or Cancel](toy.md)
 - `[2022-mar-01]` Structured [Synchronous](sc.md) Concurrency
 - `[2022-mar-19]` Algebraic Data Types with [Subtyping and Inheritance](adts.md)
