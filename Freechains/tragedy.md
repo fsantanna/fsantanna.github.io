@@ -86,4 +86,4 @@ reputation mechanism of Freechains.
 - Is *proof-of-authoring* reasonable as a scarce resource for consensus?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1535752374744227843).
