@@ -3,10 +3,11 @@
 <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
-<figure>
-  <img src="tragedy.jpeg" align="right" width="250" alt="https://www.ft.com/content/ec74ce54-d3e1-11e7-8c9a-d9c0a5c8d5c9">
-  <figcaption>(from Financial Times)</figcaption>
-</figure>
+<img src="tragedy.jpeg" align="right" width="250" title="(from Financial Times)">
+
+<!--
+https://www.ft.com/content/ec74ce54-d3e1-11e7-8c9a-d9c0a5c8d5c9
+-->
 
 [Freechains][1] is a permissionless social media protocol with integrated
 reputation.
