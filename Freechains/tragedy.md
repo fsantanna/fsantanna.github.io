@@ -9,11 +9,11 @@
 https://www.ft.com/content/ec74ce54-d3e1-11e7-8c9a-d9c0a5c8d5c9
 -->
 
-[Freechains][1] is a permissionless social media protocol with an integrated
-reputation system.
+[Freechains][1] is a permissionless social media protocol with integrated
+reputation.
 
-A user posts a message to a chain (a forum) and all other users subscribed to
-the same chain eventually receive the message.
+A user posts a message to a forum (a *chain*) and all other users subscribed to
+the same forum eventually receive the message.
 Users spend their reputation to post new messages and gain reputation from
 consolidated posts.
 Users can like and dislike messages from other users, which transfer reputation
@@ -26,13 +26,13 @@ Social media platforms suffer from the [tragedy of the commons][2]:
     the more it is used,
     the more it is abused,
     the more it decays.
-Users act on their own interests, contrarily to the common good, causing the
+Users act on their own interests, contrarily to the common good, leading the
 platforms to collapse.
-There is no principled and localized coordination, but only centralized and
-generic counter-abuse protection.
+There is no principled moderation, no localized coordination, but only
+centralized and generic counter-abuse protections.
 
-Freechains relies on a reputation system that embraces locality and
-subjectivity to escape the tragedy of the commons:
+Freechains, on the other hand, relies on a reputation system that embraces
+subjectivity and locality to escape the tragedy of the commons:
 
 1. Users can create forums with their own subjective rules (netiquettes).
 2. Creators receive initial reputation tokens, known as `reps`, to redistribute
@@ -42,17 +42,18 @@ subjectivity to escape the tragedy of the commons:
 5. Likes and dislikes transfer `reps` between users.
 
 These rules
-    support local communities sharing interests (rules `1` and `2`),
+    support local communities sharing the same interests (rules `1` and `2`),
     prevent abusive behavior from free riders (rule `3`),
     encourage authoring and steady growth (rule `4`), and
     lead to descentralization of power (rules `4` and `5`).
 
 # So, yet another blockchain?
 
-Freechains requires a consensus mechanism to prevent free riders to double
-spend `reps` to abuse the system.
+As a matter of fact, Freechains requires a consensus mechanism to prevent free
+riders to double spend `reps` to abuse the system.
 
-Bitcoin was the first protocol to support permissionless consensus.
+In this context, Bitcoin was the first protocol to support permissionless
+consensus.
 However, Bitcoin and cryptocurrencies in general are not suitable for social
 media:
 
@@ -66,7 +67,7 @@ inherent to social media.
 
 Freechains, on the other hand, relies on the scarcity of posts to reach
 consensus (*proof-of-authoring*), which is based on human work and is localized
-inside each chain.
+inside each forum.
 
 Technically, Freechains is not a linked list blockchain, but a causal graph
 of posts (a Merkle DAG) with an overlay consensus list, which may itself affect
@@ -83,7 +84,7 @@ reputation mechanism of Freechains.
 
 - Do cryptocurrencies lead to centralization of power?
 - Are extrinsic costs acceptable for social media interactions?
-- Is *proof-of-authoring* reasonable as a scarce resource towards consensus?
+- Is *proof-of-authoring* reasonable as a scarce resource for consensus?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
