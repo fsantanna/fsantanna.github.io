@@ -15,7 +15,7 @@ reputation.
 A user posts a message to a forum (a *chain*) and other users subscribed to the
 same forum eventually receive the message.
 Users spend reputation tokens, known as `reps`, to post new messages and gain
-`reps` as posts consolidate.
+`reps` as they consolidate.
 Users can like and dislike messages from other users, which transfer `reps`
 between them.
 
@@ -40,11 +40,11 @@ subjectivity and locality to escape the tragedy of the commons:
 4. Consolidated posts generate new `reps` to authors.
 5. Likes and dislikes transfer `reps` between users.
 
-These rules
-    support local communities sharing the same interests (rules `1` and `2`),
-    prevent abusive behavior from free riders (rule `3`),
-    encourage authoring and steady growth (rule `4`), and
-    lead to descentralization of power (rules `4` and `5`).
+This set of rules
+    supports local communities sharing the same interests (rules `1` and `2`),
+    prevents abusive behavior from free riders (rule `3`),
+    encourages authoring and steady growth (rule `4`), and
+    leads to descentralization of power (rules `4` and `5`).
 
 # So, yet another blockchain?
 
@@ -65,11 +65,11 @@ subject to the same consensus rules, which neglects all subjectivity that is
 inherent to social media.
 
 Freechains, on the other hand, relies on the scarcity of posts to reach
-consensus (*proof-of-authoring*), which is based on human work and is localized
-inside each forum.
+consensus (*proof-of-authoring*), which is based on human work and is
+restricted to each forum.
 
 Technically, Freechains is not a linked list blockchain, but a causal graph
-of posts (a Merkle DAG) with an overlay consensus list, which may itself affect
+of posts (a Merkle DAG) with an overlay consensus list that can itself reject
 branches of the DAG if they have inconsistencies (e.g., double spend).
 
 We are currently working on a [paper][3] that describes the consensus and
