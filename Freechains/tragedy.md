@@ -26,8 +26,8 @@ Social media platforms suffer from the [tragedy of the commons][2]:
     the more it is used,
     the more it is abused,
     the more it decays.
-Users act on their own interests, contrarily to the common good, leading the
-platforms to collapse.
+Users act on their own interests, contrarily to the common good, leading to the
+collapse of platforms.
 There is no principled moderation, no localized coordination, but only
 centralized and generic counter-abuse protections.
 
