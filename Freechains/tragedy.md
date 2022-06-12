@@ -58,7 +58,7 @@ media:
 
 - They enforce a unique timeline to preserve value and immunity to attacks.
 - They lean towards concentration of power due to scaling effects.
-- They impose an extrinsic economic cost to use the protocol (mining or fees).
+- They impose extrinsic economic costs to use the protocol (mining or fees).
 
 In particular, a unique timeline implies that all Internet content should be
 subject to the same consensus rules, which neglects all subjectivity that is
