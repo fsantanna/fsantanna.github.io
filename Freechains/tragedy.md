@@ -26,10 +26,10 @@ Social media platforms suffer from the [tragedy of the commons][2]:
     the more it is used,
     the more it is abused,
     the more it decays.
-Users act on their own interests, contrarily to the common good, leading to the
-collapse of platforms.
 There is no principled moderation, no localized coordination, but only
 centralized and generic counter-abuse protections.
+Users act on their own interests, contrarily to the common good, leading to the
+collapse of platforms.
 
 Freechains, on the other hand, relies on a reputation system that embraces
 subjectivity and locality to escape the tragedy of the commons:
@@ -65,7 +65,7 @@ subject to the same consensus rules, which neglects all subjectivity that is
 inherent to social media.
 
 Freechains, on the other hand, relies on the scarcity of posts to reach
-consensus (*proof-of-authoring*), which is based on human work and is
+consensus (*proof-of-authoring*), which is based on human creativity and is
 restricted to each forum.
 
 Technically, Freechains is not a linked list blockchain, but a causal graph
