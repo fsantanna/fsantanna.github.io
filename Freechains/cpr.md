@@ -3,41 +3,44 @@
 <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna)
 
-Previous: Freechains vs the [Tragedy of the Commons](tragedy.md)
+(Previous: Freechains vs the [Tragedy of the Commons](tragedy.md))
 
-<img src="goods.webp" align="right" width="250" title="(from BoyceWire)">
+<img src="goods.webp" align="right" width="450" title="(from BoyceWire)">
 
 <!--
 https://boycewire.com/what-are-the-4-types-of-economic-goods/
 -->
 
 Common-Pool Resources (CPRs) refer to resource systems that are too large to
-exclude outsiders from obtaining benefits from its use, but that are at the
-same time subject to scarcity.
-Fishing grounds are a typical example of a CPR, because fishes are scarce
-resources, while access to predatory fishers cannot be easily prevented.
+exclude outsiders from using it, but that are at the same time subject to
+scarcity.
+Fishing grounds are typical examples of CPRs, because fishes are scarce but
+access to predatory fishers cannot be easily prevented.
 
 CPRs are in between Public and Private Goods, because access to resources is
 non-excludable but rivalrous, i.e., everyone can extract a resource that is
 scarce.
 
-In her [seminal work][1], Elinor Ostrom proposes [eight principles][2] to
-manage renewable CPRs and avoid the [tragedy of the commons][3].
+In her [seminal work][1], Elinor Ostrom proposed [eight design principles][2]
+to manage renewable CPRs and avoid the [tragedy of the commons][3].
 She noticed that a number of successful CPRs are decentralized community-driven
 alternatives to private corporations and state administration.
 
 # Internet Forums as Common-Pool Resources
 
 We can see public internet forums and social media as renewable CPRs:
+
 The shared resources here are people's attention and engagement, which are
-"extracted" by writing in the forums.
+"extracted" by authors writing in the forums.
 In principle, anyone can publish to public forums to get attention.
+
 However, the more content there is in a forum, the less reach and attention
 each post gets individually.
 People have limited time to consume and interact with content, but which renews
 every day.
 In the limit, if the amount of content tends to infinite, then the average of
 attention each post gets tends to zero.
+
 This is the tragedy of the commons we want to avoid with the reputation system
 of Freechains.
 
@@ -62,10 +65,11 @@ We use a less academic description of the eight principles found [here][4]:
     specified community of benefit, it becomes a free for all, and that's not
     how commons work.*
 
-In Freechains, only authors with previous reputation can post in the forums.
-New participants require welcoming likes form existing participants.
-Furthermore, posts and their engagements only affect the forums in which they
-are posted.
+    In Freechains, only authors with previous reputation can post in the
+    forums.
+    New participants require welcoming likes form existing participants.
+    Furthermore, posts and their engagements only affect the forums in which
+    they are posted.
 
 <!--
 2. **Congruence between appropriation and provision rules and local conditions.**
