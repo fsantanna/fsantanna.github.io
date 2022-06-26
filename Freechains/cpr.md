@@ -56,8 +56,8 @@ We use a less academic description of the eight principles found [here][4]:
     specified community of benefit, it becomes a free for all, and that's not
     how commons work.*
 
-    In Freechains, only authors with previous reputation can post in the
-    forums.
+    In Freechains, only authors with previous reputation in a specific forum
+    can post there.
     New participants require welcoming likes form existing participants.
     Furthermore, posts and their engagements only affect the forums in which
     they are posted.
@@ -66,8 +66,8 @@ We use a less academic description of the eight principles found [here][4]:
     *There is no one-size-fits-all approach to common resource management.
     Rules should be dictated by local people and local ecological needs.*
 
-    Each forum has its own informal netiquette, which is defined by or (evolves
-    with) the community itself.
+    Each forum has its own informal netiquette, which is defined by and evolves
+    with the community itself.
 
 3. **Participatory decision-making is vital.**
     *People will be more likely to follow the rules if they had a hand in
@@ -75,8 +75,7 @@ We use a less academic description of the eight principles found [here][4]:
 
     A forum netiquette is the result of a history of posts and feedback of
     participants with likes and dislikes over the time.
-    There is nothing external to user-generated content from participants in
-    the forum.
+    There is nothing external to user-generated content in the forum.
 
 4. **Commons must be monitored.**
     *Communities need a way of checking that people are keeping them. Commons
@@ -93,8 +92,8 @@ We use a less academic description of the eight principles found [here][4]:
 
     Dislikes serve as warnings that gradually reduce the reputation of abusive
     posts and their authors.
-    If the number of dislikes crosses a threshold, a post can be revoked forum
-    and its author banned from the forum.
+    If the number of dislikes crosses a threshold, a post can be revoked and
+    its author banned from the forum.
 
 6. **Conflict resolution should be easily accessible.**
     *When issues come up, resolving them should be informal, cheap and
@@ -117,9 +116,9 @@ We use a less academic description of the eight principles found [here][4]:
     *Some things can be managed locally, but some might need wider regional
     cooperation.*
 
-    Given the open nature of the protocol, public forums can be monitored by
-    government authorities, and are still subject to law enforcement regarding
-    illegal content.
+    Given the open nature of the protocol, public forums can be externally
+    monitored and are still subject to law enforcement regarding illegal
+    content.
 
 <!--
 1. **Clearly defined boundaries.**

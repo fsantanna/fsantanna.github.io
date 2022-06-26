@@ -85,5 +85,7 @@ reputation mechanism of Freechains.
 - Are extrinsic costs acceptable for social media interactions?
 - Is *proof-of-authoring* reasonable as a scarce resource for consensus?
 
+(Next: Freechains and [Ostrom's Principles](cpr.md))
+
 Comment on <img src="../twitter.png" style="vertical-align:middle">
 [@\_fsantanna](https://twitter.com/_fsantanna/status/1535752374744227843).
