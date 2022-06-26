@@ -12,8 +12,8 @@ https://boycewire.com/what-are-the-4-types-of-economic-goods/
 -->
 
 Common-Pool Resources (CPRs) are systems with scarce and limited resources, but
-that are at the same time too large to exclude outsiders from using them.
-Fishing grounds are typical examples of CPRs, because fishes are scarce but
+that are at the same time too large to exclude access to outsiders.
+Fishing grounds are typical examples of CPRs, since fishes are scarce but
 predatory behavior from fishers cannot be easily prevented.
 
 CPRs are in between Public and Private Goods, because access to resources is
@@ -23,7 +23,7 @@ scarce.
 In her [seminal work][1], Elinor Ostrom proposed [eight design principles][2]
 to manage renewable CPRs and avoid the [tragedy of the commons][3].
 She noticed that a number of successful CPRs are decentralized community-driven
-alternatives to centralized private corporations and state administration.
+alternatives to centralized private and state-owned enterprises.
 
 # Internet Forums as Common-Pool Resources
 
@@ -39,7 +39,7 @@ People have limited time to consume content, but which renews every day.
 In the limit, if the amount of content tends to infinite, then the average
 attention each post gets tends to zero.
 This is the tragedy of the commons we want to avoid with the reputation system
-of Freechains.
+of [Freechains][4].
 
 # Freechains and Ostrom's Principles
 
@@ -49,7 +49,7 @@ conform with the common operation and vigilance of CPRs.
 We argue that the reputation and consensus mechanism of Freechains adheres
 to Ostrom's principles.
 
-We use a less academic description of the eight principles found [here][4]:
+We use a less academic description of the eight principles found [here][5]:
 
 1. **Commons need to have clearly defined boundaries.**
     *In particular, who is entitled to access to what? Unless there's a
@@ -164,7 +164,8 @@ commitment and monitoring problem are solved in an interrelated manner.*
 [1]: https://www.cambridge.org/core/books/governing-the-commons/7AB7AE11BADA84409C34815CC288CD79
 [2]: https://www.onthecommons.org/magazine/elinor-ostroms-8-principles-managing-commmons
 [3]: https://en.wikipedia.org/wiki/Tragedy_of_the_commons
-[4]: https://earthbound.report/2018/01/15/elinor-ostroms-8-rules-for-managing-the-commons/
+[4]: https://github.com/Freechains/README/
+[5]: https://earthbound.report/2018/01/15/elinor-ostroms-8-rules-for-managing-the-commons/
 
 <!--
 https://earthbound.report/2017/12/19/book-review-elinor-ostroms-rules-for-radicals-by-derek-wall/
