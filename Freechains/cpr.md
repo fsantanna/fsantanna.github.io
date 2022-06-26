@@ -177,4 +177,4 @@ https://earthbound.report/2017/12/19/book-review-elinor-ostroms-rules-for-radica
 - Is Freechains conformant with Ostrom's eight principles?
 
 Comment on <img src="../twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/TODO).
+[@\_fsantanna](https://twitter.com/_fsantanna/status/1541114263359594497).
