@@ -11,25 +11,25 @@
 https://boycewire.com/what-are-the-4-types-of-economic-goods/
 -->
 
-Common-Pool Resources (CPRs) are systems with scarce and limited resources, but
-that are at the same time too large to exclude access to outsiders.
-Fishing grounds are typical examples of CPRs, since fishes are scarce but
-predatory behavior from fishers cannot be easily prevented.
+Common-Pool Resources (CPRs) are systems with scarce resources, but at the same
+time too large to exclude access from outsiders.
+As a typical example of a CPR, fishing grounds have limited supply of fishes,
+but easy access to fishers with predatory behavior.
 
-CPRs are in between Public and Private Goods, because access to resources is
-non-excludable but rivalrous, i.e., everyone can extract a resource that is
-scarce.
+As illustrated in the Figure, CPRs share characteristics of Public and Private
+Goods: access to resources is non-excludable but rivalrous, i.e., everyone can
+extract a resource that is scarce.
 
 In her [seminal work][1], Elinor Ostrom proposed [eight design principles][2]
 to manage renewable CPRs and avoid the [tragedy of the commons][3].
-She noticed that a number of successful CPRs are decentralized community-driven
-alternatives to centralized private and state-owned enterprises.
+She noticed that a number of successful CPRs are managed by decentralized
+communities intead of centralized private and state-owned enterprises.
 
 # Internet Forums as Common-Pool Resources
 
 We can think of public internet forums and social media as renewable CPRs:
 The shared resources here are people's attention and engagement, which are
-"extracted" by authors writing in the forums.
+"extracted" by authors writing to the forums.
 
 In principle, anyone can publish to public forums to get attention.
 However, the more content there is in a forum, the less reach each post gets
@@ -44,12 +44,12 @@ of [Freechains][4].
 # Freechains and Ostrom's Principles
 
 In her book, Ostrom proposes eight design principles to make participants
-conform with the common operation and vigilance of CPRs.
+conform with the operation and vigilance of CPRs.
 
 We argue that the reputation and consensus mechanism of Freechains adheres
 to Ostrom's principles.
 
-We use a less academic description of the eight principles found [here][5]:
+We use a description of the eight principles found [here][5]:
 
 1. **Commons need to have clearly defined boundaries.**
     *In particular, who is entitled to access to what? Unless there's a
@@ -58,7 +58,7 @@ We use a less academic description of the eight principles found [here][5]:
 
     In Freechains, only authors with previous reputation in a specific forum
     can post there.
-    New participants require welcoming likes form existing participants.
+    New participants require welcoming likes from existing participants.
     Furthermore, posts and their engagements only affect the forums in which
     they are posted.
 
@@ -67,15 +67,15 @@ We use a less academic description of the eight principles found [here][5]:
     Rules should be dictated by local people and local ecological needs.*
 
     Each forum has its own informal netiquette, which is defined by and evolves
-    with the community itself.
+    with the community and its published content.
 
 3. **Participatory decision-making is vital.**
     *People will be more likely to follow the rules if they had a hand in
     writing them. Involve as many people as possible in decision-making.*
 
-    A forum netiquette is the result of a history of posts and feedback of
-    participants with likes and dislikes over the time.
-    There is nothing external to user-generated content in the forum.
+    A forum netiquette is the result of a history of posts from participants,
+    along with their feedback with likes and dislikes over the time.
+    There is nothing external to user-generated content in the forums.
 
 4. **Commons must be monitored.**
     *Communities need a way of checking that people are keeping them. Commons
@@ -103,7 +103,7 @@ We use a less academic description of the eight principles found [here][5]:
 
     Forums are open to discussion and maintain a persistent and transparent
     archive.
-    Likes and dislikes provide instant feedback.
+    Likes and dislikes provide instant feedback to mediate conflict.
 
 7. **Commons need the right to organise.**
     *Your commons rules won't count for anything if a higher local authority
