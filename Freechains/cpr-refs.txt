@@ -1,0 +1,218 @@
+-------------------------------------------------------------------------------
+LIVRO
+
+“Ruin is the destination toward which all men rush, each pursuing his own best
+interest in a society that believes in the freedom of the commons.”
+
+Olson considers it an open question whether intermediate'liize groups will or
+will not voluntarily provide collective benefits. His definition of an
+intermediate-size group depends not on the number of actors involved but on how
+noticeable each person's actions are.
+
+As soon as we allow the possibility of a private party to take on the role of
+an external enforcer, the nature of the "solution " offered by Game 5 to the
+commons dilemma begins to generate a rich set of alternative applications.
+
+The herders, who use the same meadow year after year, have detailed and
+relativc:Jy accurate information about carrying capacity. They observe the
+behavior of other herders and have an incentive to report contractual in
+fractions. Arbitrators may not need to hire monitors to observe the activities
+of the contracting parties. The self­interest of those who negotiated the
+contract will lead them to monitor each other and to repo" observed infractions
+so that the contract is enforced. A regulatory agency, on the other hand,
+always needs to hire its own monitors. The regulatory agency then faces the
+principal-agent problem of how to ensure that its monitors do their own job.
+
+A further problem for consideration is that games in which enforcers have been
+arranged for by mutual agreement may be mistaken by analysts and public
+officials (or games in which there have been "0 agreements about how to
+cooperate and enforce agreements
+
+Alanya provides an example of a self­governed common-property arrangement in
+which the rules have been devised and modified by the participants themselves
+and also are monitored and enforced by them.
+
+There are limits on the types of CPRs studied here:
+    (1) renewable rather than nonrenewable resources,
+    (2) siNations where substantial scarcity exists, rather than abundance, and
+    (3) situations in which the users can substantially harm one another, but
+        not situations 1ft which parricipant5 can produce maJor external harm
+        for others.
+
+Many efforts to analyze collective-action problems have governing the commons
+framed the analysis by presuming that all such problems can be represented as
+prisoner's dilemma (PO) games, that a single level of analysis is sufficient,
+and that transactions costs are insignificant and can be ignored. In the last
+section of this chapter, I propose assumptions that are alternatives to those
+that normally frame the analysis of collective action.
+
+The term "common-pool resource" refers to a natural or man-made re­
+source system that is sufficiently large as to make it costly (but not impos­
+sible) to exclude potential beneficiaries from obtaining benefits from its
+use.
+
+CPR appropriators who organize themselves to govern and
+manage a CPR are faced with some problems that are similar to those of
+appropriating private goods and other problems that are similar to those of
+providing pu b l ic goods.
+
+Organizing appropriators for collective action regarding a CPR is usually
+an uncertain and complex undertaking.
+A major source of uncertainty IS Jack of knowledge.
+Moreover, this folk knowledge must be preserved and passed along from one gen­
+eration to the next.
+The symmetry of information available to ap·
+propriators will also vary from situation to situation, depending on how
+expensive it is to acquire information and the rules used for disseminating
+information to appropriators.
+
+- Freechains all info is transparent
+
+In every group there will be individuals who will ignore norms and act
+opportunistically when given a chance. There are also situations in which
+the potential benefits will be so h igh that even strongly committed in­
+dividuals will break norms. Consequently, the adoption of norms of be­
+havior will not reduce opportunistic behavior to zero. Opportunistic be­
+havior is a possibility that must be dealt with by all appropriators trying to
+solve CPR problems.
+
+In some settings, however, rampant opportunistic behavior severely lim­
+its what can be done jointly without major investments in monitoring and
+sanctioning arrangements. Substantial benefits have to be obtained to make
+cosdy monitoring and sanctioning activities wonhwhile. In other settings,
+Ions-term joint commitments C4I1 be undcnakcn with only a modes[ in­
+vestment in monitoring and sanctioning arrangements. Shared norms that
+reduce the cost of monitoring and sanctioning activities can be viewed as
+social capital to be utilized in solving CPR problems.
+
+- algoritmo automatico. monitoramento humano. historico do passado. reacao a posteriori
+
+Unlike prisoners, most CPR ap?ropriators are not coerced into acting
+independently.
+
+As Elster (1989, p. 41) states, "punishment almost
+invariably is costly to the punisher, while the benefits from p un is h men t are
+diffusely distributed over the members."
+
+When CPR approp riators design thei r own operational rules (d:sign
+principle 3) to be enforced by individuals who are local appropriators or
+are accountable to them (design principle 4), using graduated sanctions
+(design principle 5) that define who has rights to withdraw units front the
+CPR (design principle 1) and that effectively restrict appropriation activ­
+ities, given local conditions (design principle 2), the commitment and
+monitoring problem are solved in an interrelated manner.
+
+-------------------------------------------------------------------------------
+https://en.wikipedia.org/wiki/Goods#Goods_classified_by_exclusivity_and_competitiveness
+
+There are four types of goods based on the characteristics of rival in consumption and excludability: Public Goods, Private Goods, Common Resources, and Club Goods.[8] These four types plus examples for anti-rivalry appear in the accompanying table.[9] 
+
+https://research.aalto.fi/files/41477511/Nikander_et_al_2nd_DBOS.pdf
+Rivalrous/Non-rivalrous
+Excludable/Non-excludable
+
+-------------------------------------------------------------------------------
+Wikipedia
+
+Common-pool resources may be owned by national, regional or local governments as public goods, by communal groups as common property resources, or by private individuals or corporations as private goods. When they are owned by no one, they are used as open access resources. Having observed a number of common pool resources throughout the world, Elinor Ostrom noticed that a number of them are governed by common property protocols — arrangements different from private property or state administration — based on self-management by a local community. Her observations contradict claims that common-pool resources must be privatized or else face destruction in the long run due to collective action problems leading to the overuse of the core resource[4] (see also Tragedy of the commons). 
+
+Common property systems typically protect the core resource and allocate the fringe resources through complex community norms of consensus decision-making.[7] 
+Mandal, B.N. (2009). Global Encyclopaedia of Welfare Economics. Global Vision Publishing House. ISBN 978-8182202597.
+
+Analysing the design of long-enduring CPR institutions, Elinor Ostrom identified eight design principles which are prerequisites for a stable CPR arrangement:[8] 
+Clearly defined boundaries
+Congruence between appropriation and provision rules and local conditions
+Collective-choice arrangements allowing for the participation of most of the appropriators in the decision making process
+Effective monitoring by monitors who are part of or accountable to the appropriators
+Graduated sanctions for appropriators who do not respect community rules
+Conflict-resolution mechanisms which are cheap and easy to access
+Minimal recognition of rights to organize (e.g., by the government)
+
+Ostrom outlines five basic protocol requirements for achieving adaptive governance.[10] These include:
+
+    Achieving accurate and relevant information, by focusing on the creation and use of timely scientific knowledge on the part of both the managers and the users of the resource
+    Dealing with conflict, acknowledging the fact that conflicts will occur, and having systems in place to discover and resolve them as quickly as possible
+    Enhancing rule compliance, through creating responsibility for the users of a resource to monitor usage
+    Providing infrastructure, that is flexible over time, both to aid internal operations and create links to other resources
+    Encouraging adaption and change to address errors and cope with new developments
+
+
+The community is responsible for supervising and administering CPR under an autonomous management system, the characteristics of a community can affect how CPR is managed.[6] (1) the size of the community. The level of cooperation decreases as the number of community members grows; (2) Allocation mechanism for CPR. Encouraging the exploitation of the least used resources and reducing the exploitation of the most used resources will effectively increase the rate of resource supply and reduce the rate of resource consumption and individual demand. (3) Group identity. When people in a community have a strong sense of group identity, it helps to manage CPR within the community.[13] 
+Ostrom, Elinor (2008-07-01). "The Challenge of Common-Pool Resources". Environment: Science and Policy for Sustainable Development. 50 (4): 8–21. doi:10.3200/ENVT.50.4.8-21. ISSN 0013-9157. S2CID 154884533.
+
+-------------------------------------------------------------------------------
+- https://www.ft.com/content/ec74ce54-d3e1-11e7-8c9a-d9c0a5c8d5c9
+
+imagem muito boa
+
+Each scandal produces fresh calls for networks to be treated like publishers of news, who are responsible for everything that appears under their names. Each one forces them further to tighten their “community standards” and hire more content checkers. By next year, Facebook intends to employ 20,000 people in “community operations”, its censorship division.
+
+A better way to think of Russian political ads, extremist videos, fake news and all the rest is as the polluters of common resources, albeit ones that are privately owned. The term for this is the tragedy of the commons. Open ecosystems that are openly shared by entire communities tend to get despoiled.
+
+Here lies the threat to social networks. They set themselves up as commons, offering open access to hundreds of millions to publish “user-generated content” and share photos with others. That in turn produced a network effect: people needed to use Facebook or others to communicate.
+
+But they attract bad actors as well — people and organisations who exploit free resources for money or perverted motives. These are polluters of the digital commons and with them come over-grazers: people guilty of lesser sins such as shouting loudly to gain attention or attacking others.
+
+It would cross the dividing line if they reviewed everything before allowing it to be published, rather than removing offensive material when alerted. Defying Hardin, they aspire to a technical solution: using artificial intelligence to identify copyright infringements and worse before their users or other organisations flag them for review.
+
+-------------------------------------------------------------------------------
+- https://fortune.com/2019/06/12/about-the-tragedy-of-the-digital-commons-raceahead/
+
+I’ve been thinking a lot about this theory lately, and the tragic mess that social media, the commons of the digital age, has become.
+
+The digital commons analogy is not a perfect one. The spaces are not fully public, nor are they entirely unmanaged. Though we pay a high price (our data) in terms of admission to them, we have no say in their governance. And the monstrous behavior that they enable, whether by design or neglect, have complex and deeply human origins. Small gestures like sort of banning Infowars’s Alex Jones was nice, but it’s no substitute for the deep thinking required to revive the early promise of these online spaces.
+
+-------------------------------------------------------------------------------
+https://gilescrouch.medium.com/the-common-tragedy-of-all-social-networks-1ef88ad7be37
+
+Today, it seems they have tapped into a global undercurrent of aggressive toxic masculinity, enabled surveillance states, been compromised by competing political ideologies and caused a whole new degree of social angst. Yet some channels, like Pinterest, LinkedIn, Medium and Reddit seem to have thrived and found a path, though they also face similar challenges of tragedy.
+
+Much of this can be attributed to one causal factor that plays out across any social network. It’s known as “the tragedy of the commons.” It happens to ALL social networks and it’s a problem none have figured out how to entirely solve.
+
+In sub-networks, like Reddit and other forums, this can be quite effective as they are smaller groups (mostly) and therefore rules can be ore easily applied and governed and such platforms are designed that way. Forums are the oldest form of digital social media as they are the great grandchildren of the early electronic bulletin boards of the late 1970's.
+
+-------------------------------------------------------------------------------
+https://geopoliticalfutures.com/the-internet-and-the-tragedy-of-the-commons/
+
+But in reality, the internet has not become more democratic. More fastidious citizens no longer visit the commons, or if they do, only to speak to those they know. It is increasingly the place of the marginal. It is interesting how the mainstream media has used Twitter to gain a sense of public opinion. I frequently wonder if the person from Twitter being quoted in a news story is a 12-year-old whose medications are no longer effective. The media doesn’t know. There are still worthwhile conversations to be had there, but many people now becoming less engaged.
+
+The internet is a place with two problems, both masked. Some use it to steal private information and correspondence. Some use it to spew venom through the promise of anonymity. They are both destroying the global commons that had so much hope, in the same way that the village commons would be destroyed if it were invaded by people wearing masks, stealing people’s diaries and money and shouting obscene improbabilities. The tragedy of the commons today is not indifferent exploitation. The tragedy of the commons is that it can be dominated by criminals and those harassing others who want a civil conversation. It reminds me of Central Park in New York in the 1970s. Anyone who was there after dark was a mugger or crazy.
+
+The problem is technical. Today’s computers descended without dramatic change from those available 20 years ago. The internet got larger with more bandwidth but is still as primitive as when it was first designed for a small group of scientists wanting to share information. The security that exists today consists of complex add-ons that require sophisticated managers, and they still can be broken into. Security can’t be an add-on. It has to be at the heart of the system, and its first requirement should be to eliminate anonymity, so that criminals can be identified and so that the vile will know shame.
+
+-------------------------------------------------------------------------------
+Digitalisation, anti-rival compensation and governance: Need for experiments
+
+n this expanded model, “Network goods” are ones whose subtracability is negative, typically due to
+network eﬀects, but that are excludable. “Symbiotic goods,” in turn, are goods whose subtractability is
+negative but that are non-excludable. An example of the former class could be a computer game that can
+only be played in a controlled platform, such as a game console that has a fully working DRM mechanism.
+The prime examples of the latter class are the Internet and open blockchains, which — while not free — are
+both non-excludable in most countries and whose value clearly increases the more they are used. 2
+
+Consequently, “anti-rival compensation” is an implied, at this point still imaginary good, a concept for a new
+medium and structure that can be used to compensate in transactions involving anti-rival goods.
+It should act as a unit of account and store of value of delayed compensation, just like money, but instead
+of being a medium of exchange, it should be a “medium of sharing.” At this point of development, we
+surmise that such generic media do not exist, even though we may have a few candidates that get close.
+Clearly, its indicated value cannot have any linear relationship with monetary units. It remains as an open
+question how such “non-linear” a unit of account would compare to the linear media of exchange.
+
+Naturally, we do not expect such new mechanisms just to appear. Instead, there appear already exist a few
+alike mechanisms, such as various informal reputation mechanisms in the open source market and in a few
+social credit systems. Furthermore, we expect that there will be financial innovation that essentially attempt
+to build anti-rival compensation mechanisms through contractual approaches. However, especially in the
+latter case the transaction costs are likely to relatively high, limiting the resulting markets to high-value
+digital goods.
+
+-------------------------------------------------------------------------------
+https://cryptocommons.cc/foss-for-cpr/cprs/
+
+Public blockchains are commons-based, in that they are openly accessible and any new node can join the network - but there is a cost to running the network.
+
+frase abaixo contradiz a de cima
+
+People who wish to make transactions must include fees with their transactions that the miners can collect, miners tend to process the transactions with the highest fees.
+
+Blockchains have one big advantage as compared to other CPRs - they allow for the rules of the network to be reliably enforced by participants at minimal expense. Cryptography is key to this capacity, because it makes it much easier for defenders of the network to verify the authenticity of information than it is for attackers to introduce corrupt information.
+
