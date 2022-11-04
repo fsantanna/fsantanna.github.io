@@ -26,7 +26,7 @@ more productive alternative for game logic development:
 > the game logic more concisely.
 
 SSRP can be considered a flavor of *"Structured Concurrency"* (discussed in a
-previous [blog post][../sc.md]) with a focus on real-time interactive
+previous [blog post](../sc.md)) with a focus on real-time interactive
 applications, such as video games.
 
 The bulk of the study is a qualitative analysis of the programming techniques
