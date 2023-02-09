@@ -44,17 +44,17 @@ pico-state-set-title("pico-Ceu: Click, Drag, or Cancel")
         }
     }
 
-    ;; outer loop to restart after each behavior is detected
+    ;; outer loop restarts after each behavior is detected
     <b>loop</b> {
-        ;; first detects the first click on the rectangle
+        ;; 1. detects first click on the rectangle
         <b>await</b> :Pico.Mouse.Button.Dn, pico-point-vs-rect?(<b>evt</b>.pos,rect)
         println("> clicking...")
         <b>val</b> orig  :Rect = copy(rect)
         <b>val</b> click :XY   = copy(<b>evt</b>.pos)
 
-        ;; then either cancel, drag/drop, or click
+        ;; 2. either cancel, drag/drop, or click
         <b>par-or</b> {
-            ;; cancel task: restores the original position on any key
+            ;; cancel task: restores the original position on key ESC
             <b>await</b> :Pico.Key.Dn, (<b>evt</b>.key == :Key-Escape)
             <b>set</b> rect = copy(orig)
             println("<<< Cancelled!")
@@ -72,8 +72,8 @@ pico-state-set-title("pico-Ceu: Click, Drag, or Cancel")
             }
             println("<<< Dragged!")
         } <b>with</b> {
-            ;; behavior: must be the last
-            ;; otherwise conflicts w/ motion termination
+            ;; click task: must be the last
+            ;; otherwise conflicts with motion termination
             <b>await</b> :Pico.Mouse.Button.Up
             println("<<< Clicked!")
         }
