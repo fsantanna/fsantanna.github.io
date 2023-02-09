@@ -18,83 +18,69 @@ For the process-oriented approach he uses his Esterel-inspired [Abro.js][2] and
 argues that it provides "a clear, explicit sequencing between the different
 states".
 
-Since he mentions [Céu][3] and since I'm currently working on its upcoming
+Since he mentions [Ceu][3] and since I'm currently working on its upcoming
 version, I felt motivated to also post a solution to the problem.
-The solution in Céu is similar to his, and uses the `paror` and `watching`
+The solution in Ceu is similar to his, and uses the `par-or` and `awaiting`
 constructs to safely abort behaviors that did not complete.
 A small difference worth mentioning is relying on the deterministic scheduling
-semantics of Céu to eliminate a state variable (`didDrag`).
-
-Currently, Céu lacks primitive types (e.g., strings and integers), and named
-fields, so some parts of the code might look strange.
-Anyways, here's the complete solution with [an accompanying video][4]:
+semantics of Ceu to eliminate a state variable (`didDrag`).
+Here's the complete solution with [an accompanying video][4]:
 
 <pre>
-^"int.ceu"
-^"pico.ceu"
+^["@/pico/pico.ceu"]
 
--- rectangle to control
-<b>var</b> rect: Rect = [[_10,_10],[_5,_5]]
+pico-state-set-title("pico-Ceu: Click, Drag, or Cancel")
 
--- tasks to behaviors: cancel, drag and drop, click
+;; outer task with nested tasks to redraw, cancel, drag and drop, and click
 <b>spawn</b> {
-    -- outer loop to restart after each behavior is detected
-    <b>loop</b> {
-        -- first detects the first click on the rectangle
-        <b>var</b> dxy: Size   -- holds the offset to its center
-        {
-            <b>var</b> mouse: Point
-            <b>await</b> evt?Mouse?Button?Down <b>until</b> isPointInsideRect [mouse,rect]
-                <b>where</b> {
-                    <b>set</b> mouse = evt!Mouse!Button!Down.pos
-                }
-            <b>set</b> dxy = [sub [rect.pos.x,mouse.x], sub [rect.pos.y,mouse.y]]
-        }
+    ;; rectangle to control
+    <b>var</b> rect :Rect = [[10,10],[5,5]]
 
-        -- then either cancel, drag/drop, or click
-        <b>paror</b> {
-            -- cancel behavior: restores the original position on any key
-            <b>var</b> orig = rect
-            <b>await</b> evt?Key?Down <b>until</b> eq [evt!Key!Down.key,_SDLK_ESCAPE]
-            <b>set</b> rect = orig
-            <b>output</b> std _("Cancelled!"):_(char*)
+    ;; task to redraw the rectangle in the current position
+    <b>spawn</b> {
+        <b>every</b> :Pico.Draw {
+            pico-state-set-color-clear([0,0,0,255])
+            pico-output-draw-rect(rect)
+        }
+    }
+
+    ;; outer loop to restart after each behavior is detected
+    <b>loop</b> {
+        ;; first detects the first click on the rectangle
+        <b>await</b> :Pico.Mouse.Button.Dn, pico-point-vs-rect?(<b>evt</b>.pos,rect)
+        println("> clicking...")
+        <b>val</b> orig  :Rect = copy(rect)
+        <b>val</b> click :XY   = copy(<b>evt</b>.pos)
+
+        ;; then either cancel, drag/drop, or click
+        <b>par-or</b> {
+            ;; cancel task: restores the original position on any key
+            <b>await</b> :Pico.Key.Dn, (<b>evt</b>.key == :Key-Escape)
+            <b>set</b> rect = copy(orig)
+            println("<<< Cancelled!")
         } <b>with</b> {
-            -- drag/drop behavior: must be before click (see below)
-            <b>await</b> evt?Mouse?Motion
-            <b>output</b> std _("Dragging..."):_(char*)
-            <b>var</b> mouse = evt!Mouse!Motion
-            <b>watching</b> evt?Mouse?Button?Up {   -- terminates on mouse up
-                -- tracks mouse motion to move the rectangle
+            ;; drag/drop task: must be before click (see below)
+            <b>await</b> :Pico.Mouse.Motion
+            println("> dragging...")
+            <b>awaiting</b> :Pico.Mouse.Button.Up { ;; terminates on mouse up
+                ;; tracks mouse motion to move the rectangle
                 <b>loop</b> {
-                    <b>set</b> rect = [pt, rect.size]
-                        <b>where</b> {
-                            <b>var</b> pt: Point = [add [mouse.pos.x,dxy.w], add [mouse.pos.y,dxy.h]]
-                        }
-                    <b>await</b> evt?Mouse?Motion
-                    <b>set</b> mouse = evt!Mouse!Motion
+                    <b>set</b> rect.pos.x = orig.pos.x + (<b>evt</b>.pos.x - click.x)
+                    <b>set</b> rect.pos.y = orig.pos.y + (<b>evt</b>.pos.y - click.y)
+                    <b>await</b> :Pico.Mouse.Motion
                 }
             }
-            <b>output</b> std _("Dropped!"):_(char*)
+            println("<<< Dragged!")
         } <b>with</b> {
-            -- behavior: must be the last
-            -- otherwise conflicts w/ motion termination
-            <b>await</b> evt?Mouse?Button?Up
-            <b>output</b> std _("Clicked!"):_(char*)
+            ;; behavior: must be the last
+            ;; otherwise conflicts w/ motion termination
+            <b>await</b> :Pico.Mouse.Button.Up
+            println("<<< Clicked!")
         }
     }
 }
 
--- task for redrawing
-<b>spawn</b> {
-    <b>loop</b> {
-        <b>await</b> _1
-        <b>output</b> pico Pico.Output.Clear
-        <b>output</b> pico Pico.Output.Draw.Rect rect
-        <b>output</b> pico Pico.Output.Present
-    }
-}
-
-<b>call</b> pico_loop ()
+pico-loop()
 </pre>
 
 Comment on <img src="twitter.png" style="vertical-align:middle">
@@ -103,5 +89,5 @@ Comment on <img src="twitter.png" style="vertical-align:middle">
 [0]: https://twitter.com/dubroy
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/
 [2]: https://github.com/pdubroy/abro
-[3]: http://www.ceu-lang.org/
+[3]: https://github.com/fsantanna/dceu
 [4]: https://youtu.be/eC1d5MevRbg
