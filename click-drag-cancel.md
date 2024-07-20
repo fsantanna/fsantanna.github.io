@@ -20,26 +20,21 @@ states".
 
 Since he mentions [Ceu][3] and since I'm currently working on its upcoming
 version, I felt motivated to also post a solution to the problem.
-The solution in Ceu is similar to his, and uses the `par-or` and `awaiting`
+The solution in Ceu is similar to his, and uses the `par-or` and `watching`
 constructs to safely abort behaviors that did not complete.
 A small difference worth mentioning is relying on the deterministic scheduling
 semantics of Ceu to eliminate a state variable (`didDrag`).
-Here's the complete solution with [an accompanying video][4]:
+Here's [the solution][4] with [an accompanying video][5]:
 
 <pre>
-^["@/pico/pico.ceu"]
-
-pico-state-set-title("pico-Ceu: Click, Drag, or Cancel")
-
 ;; outer task with nested tasks to redraw, cancel, drag and drop, and click
 <b>spawn</b> {
     ;; rectangle to control
-    <b>var</b> rect :Rect = [[10,10],[5,5]]
+    <b>var</b> rect :Rect = [[0,0],[10,10]]
 
     ;; task to redraw the rectangle in the current position
     <b>spawn</b> {
         <b>every</b> :Pico.Draw {
-            pico-state-set-color-clear([0,0,0,255])
             pico-output-draw-rect(rect)
         }
     }
@@ -47,34 +42,36 @@ pico-state-set-title("pico-Ceu: Click, Drag, or Cancel")
     ;; outer loop restarts after each behavior is detected
     <b>loop</b> {
         ;; 1. detects first click on the rectangle
-        <b>await</b> :Pico.Mouse.Button.Dn, pico-point-vs-rect?(<b>evt</b>.pos,rect)
-        println("> clicking...")
-        <b>val</b> orig  :Rect = copy(rect)
-        <b>val</b> click :XY   = copy(<b>evt</b>.pos)
+        <b>val</b> click :XY = <b>await</b>(:Pico.Mouse.Button.Dn | pico.point-vs-rect?(<b>it</b>.pos,rect)) {
+            ;; reads as "await mouse button down such that it is inside rect,
+            ;;           then copy mouse position out"
+            copy(<b>it</b>.pos)
+        }
+        <b>val</b> orig :Rect = copy(rect)
+        println("... clicking ...")
 
         ;; 2. either cancel, drag/drop, or click
         <b>par-or</b> {
             ;; cancel task: restores the original position on key ESC
-            <b>await</b> :Pico.Key.Dn, (<b>evt</b>.key == :Key-Escape)
+            <b>await</b>(:Pico.Key.Dn | <b>it</b>.key==:Key-Escape)
             <b>set</b> rect = copy(orig)
-            println("<<< Cancelled!")
+            println("!!! Cancelled !!!")
         } <b>with</b> {
             ;; drag/drop task: must be before click (see below)
-            <b>await</b> :Pico.Mouse.Motion
+            <b>await</b>(:Pico.Mouse.Motion)
             println("> dragging...")
-            <b>awaiting</b> :Pico.Mouse.Button.Up { ;; terminates on mouse up
+            <b>watching</b> :Pico.Mouse.Button.Up { ;; terminates on mouse up
                 ;; tracks mouse motion to move the rectangle
-                <b>loop</b> {
-                    <b>set</b> rect.pos.x = orig.pos.x + (<b>evt</b>.pos.x - click.x)
-                    <b>set</b> rect.pos.y = orig.pos.y + (<b>evt</b>.pos.y - click.y)
-                    <b>await</b> :Pico.Mouse.Motion
+                <b>every</b> :Pico.Mouse.Motion {
+                    <b>set</b> rect.pos.x = orig.pos.x + (<b>it</b>.pos.x - click.x)
+                    <b>set</b> rect.pos.y = orig.pos.y + (<b>it</b>.pos.y - click.y)
                 }
             }
             println("<<< Dragged!")
         } <b>with</b> {
             ;; click task: must be the last
             ;; otherwise conflicts with motion termination
-            <b>await</b> :Pico.Mouse.Button.Up
+            <b>await</b>(:Pico.Mouse.Button.Up)
             println("<<< Clicked!")
         }
     }
@@ -90,4 +87,5 @@ Comment on <img src="twitter.png" style="vertical-align:middle">
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/
 [2]: https://github.com/pdubroy/abro
 [3]: https://github.com/fsantanna/dceu
-[4]: https://youtu.be/eC1d5MevRbg
+[4]: https://github.com/fsantanna/pico-ceu/blob/main/tst/click-drag-cancel-x.ceu
+[5]: https://youtu.be/eC1d5MevRbg
