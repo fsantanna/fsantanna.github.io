@@ -1,7 +1,10 @@
 # A Toy Problem: Drag, Click, or Cancel
 
-<img src="twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna)
+<img src="bsky.svg" style="vertical-align:middle" height="25">
+[@fsantanna](https://bsky.app/profile/fsantanna.bsky.social)
+
+- `[fev/22]`: first posted
+- `[jul/24]`: updated to `ceu-v0.4`
 
 Last week Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle
 user input:
