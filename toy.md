@@ -6,8 +6,7 @@
 - `[fev/22]`: first posted
 - `[jul/24]`: updated to `ceu-v0.4`
 
-Last week Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle
-user input:
+Patrick Dubroy ([@dubroy][0]) proposed a [toy problem][1] to handle user input:
 
 > The goal is to implement a square that you can either drag and drop, or
 > click. The code should distinguish between the two gestures: a click
@@ -83,8 +82,9 @@ Here's [the solution][4] with [an accompanying video][5]:
 pico-loop()
 </pre>
 
-Comment on <img src="twitter.png" style="vertical-align:middle">
-[@\_fsantanna](https://twitter.com/_fsantanna/status/1495115884637134852).
+Comment on <img src="bsky.svg" style="vertical-align:middle" height="25">
+[@fsantanna](https://bsky.app/profile/fsantanna.bsky.social/post/3kxsdzxbk5k2h).
+
 
 [0]: https://twitter.com/dubroy
 [1]: https://dubroy.com/blog/three-ways-of-handling-user-input/
