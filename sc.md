@@ -124,7 +124,7 @@ Hence, SC must be in quadrant *C*, and hence the title of the post as
 
 [1]: https://en.wikipedia.org/wiki/Structured_concurrency
 [2]: https://en.wikipedia.org/wiki/Esterel
-[3]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.42.1557&rep=rep1&type=pdf
+[3]: https://link.springer.com/chapter/10.1007/3-540-57529-4_44
 [4]: https://en.wikipedia.org/wiki/Functional_reactive_programming
 
 ---
