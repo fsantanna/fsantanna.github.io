@@ -22,13 +22,13 @@ For the process-oriented approach he uses his Esterel-inspired [Abro.js][abro]
 and argues that it provides "a clear, explicit sequencing between the different
 states".
 
-Since he mentions [Ceu][ceu] and since I'm currently working on its upcoming
+Since he mentions [Céu][ceu] and since I'm currently working on its upcoming
 version [Atmos][atmos], I felt motivated to also post a solution to the
 problem.
-The solution in Ceu is similar to his, and uses the `par-or` and `watching`
+The solution in Atmos is similar to his, and uses the `par-or` and `watching`
 constructs to safely abort behaviors that did not complete.
 A small difference worth mentioning is relying on the deterministic scheduling
-semantics of Ceu to eliminate a state variable (`didDrag`).
+semantics of Atmos to eliminate a state variable (`didDrag`).
 Here's [the solution][code] with [an accompanying video][video]:
 
 <pre>
